@@ -1,0 +1,114 @@
+.catalog-card {
+  border-radius: 3px;
+  border: solid 2px #e2e6ea;
+  flex-direction: column;
+  align-items: center;
+
+  &--novelties-of-week {
+    border: none;
+  }
+}
+
+.catalog-card__title {
+  color: $red;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+}
+
+.catalog-card__link {
+  color: inherit;
+
+  & img {
+   display: block;
+   height: auto;
+   margin: 0 auto;
+   margin-top: 15px;
+  }
+}
+
+.catalog-card__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-card__descr {
+  display: block;
+  color: $dark-gray;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.catalog-card__buy {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.catalog-card__price {
+  color: $red;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.catalog-card__btn {
+  margin: 10px auto;
+}
+
+@media (min-width: $desktop-width) {
+  .catalog-card {
+    &--novelties-of-week {
+      align-items: flex-start;
+      padding-bottom: 20px;
+    }
+
+    &--novelties-of-week .catalog-card__link img {
+      margin-left: 35px;
+      margin-top: 15px;
+      margin-right: 20px;
+    }
+
+    &--novelties-of-week .catalog-card__text {
+      align-items: flex-start;
+      width: 100%;
+      padding: 0;
+      padding-top: 18px;
+    }
+
+    &--novelties-of-week .catalog-card__buy-wrapper {
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    &--novelties-of-week .catalog-card__btn {
+      margin: 0;
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  .catalog-card__text {
+    align-items: flex-start;
+    padding: 0 20px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+
+  .catalog-card__buy-wrapper {
+    width: 100%;
+    padding-top: 15px;
+  }
+
+  .catalog-card__btn {
+    margin: 10px 0;
+  }
+}

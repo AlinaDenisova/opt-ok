@@ -1,0 +1,154 @@
+.catalog-nav {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.catalog-nav__container {
+  @include container;
+}
+
+.catalog-nav__list {
+  @include list-reset;
+  border-radius: 3px;
+  background-color: #e2e6ea;
+  padding-top: 25px;
+  padding-bottom: 15px;
+
+  &:last-child {
+    padding-top: 15px;
+    border-top: 1px solid #ffffff;
+  }
+}
+
+.catalog-nav__item {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    box-sizing: border-box;
+    left: 35px;
+    width: 88%;
+    border-bottom: 1px dotted #ffffff;
+  }
+
+  &:first-child .catalog-nav__toggle {
+    top: 10px;
+  }
+}
+
+.catalog-nav__item-container {
+  padding: 0 10px;
+}
+
+.catalog-nav__toggle {
+  border: none;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  z-index: 2;
+  background-color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: 2px solid $red;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  &--active::after {
+    top: 5px;
+    right: 10px;
+    border: 2px solid #8d8d8d;
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+.catalog-nav__label {
+  padding-left: 35px;
+  color: $dark-gray;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: uppercase;
+  position: relative;
+  padding-right: 35px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+
+  &--new {
+    color: $red;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    background-color: transparent;
+  }
+}
+
+.catalog-nav__link {
+  color: inherit;
+  position: relative;
+  display: block;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $red;
+  }
+}
+
+.catalog-nav__item-list {
+  display: none;
+}
+
+
+.catalog-nav__toggle--active ~ .sub-nav {
+  display: block;
+}
+
+.catalog-nav__input:checked + .catalog-nav__label::after {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 3px;
+  width: 9px;
+  height: 5px;
+  background-color: transparent;
+  border: 2px solid #3f3f3f;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(135deg);
+}
+
+@media (min-width: $desktop-width) {
+  .catalog-nav__item {
+    &::before {
+      width: 186px;
+    }
+  }
+}
+
+

@@ -12,13 +12,739 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body class="no-js">
-    <header class="page-header page-header--closed">
-    </header>
+    <div style="display:none">
+      <include src="dev/img/sprite.svg"></include>
+    </div>
+    <div class="page-wrapper">
+      <header class="page-header">
+        <div class="page-header__container">
+          <div class="page-header__logo">
+            <a class="page-header__logo-link">
+              <picture class="page-header__logo-img">
+                <source type="image/webp" media="(min-width: 1100px)" srcset="img/logo.webp 1x, img/logo@2x.webp 2x, img/logo@3x.webp 3x">
+                <source type="image/webp" srcset="img/logo-mobile.webp 1x, img/logo-mobile@2x.webp 2x, img/logos-mobile@3x.webp 3x">
+                <source media="(min-width: 1100px)" srcset="img/logo.webp 1x, img/logo@2x.webp 2x, img/logo@3x.webp 3x">
+                <img src="img/logo-mobile.png" srcset="img/logo-mobile@2x.png 2x, img/logo-mobile@3x.png 3x" alt="Логотип интрнет-магазина «Opt-ok.ru»">
+              </picture>
+              <h1 class="page-header__title">Оптовый интернет&#8209;магазин</h1>
+            </a>
+          </div>
 
-    <main class="page-main">
-    </main>
+          <div class="page-header__right">
+            <div class="page-header__features">
+              <a class="page-header__features-link" href="#"><b>5 причин</b> работать с&nbsp;нами</a>
+            </div>
+            <ul class="page-header__phones phone-list">
+              <li class="phone-list__item">
+                <a class="phone-list__phone" href="tel:8(800)3337099">8 800 333-70-99</a>
+                <span class="phone-list__note">(бесплатно из регионов РФ)</span>
+              </li>
+              <li class="phone-list__item">
+                <a class="phone-list__phone" href="tel:+7(495)9724991">+7 (495) 972-49-91</a>
+                <a class="phone-list__phone" href="tel:+7(926)7225949">+7 (926) 722-59-49</a>
+              </li>
+            </ul>
+
+            <div class="page-header__basket">
+              <a class="page-header__basket-link" href="#">
+                <svg class="page-header__basket-icon" width="56" height="47">
+                  <use xlink:href="#icon-basket"></use>
+                </svg>
+                <span class="page-header__basket-title">Корзина</span>
+                <div class="page-header__basket-info">
+                  <span class="page-header__basket-quantity">2 /</span>
+                  <span class="page-header__basket-price">1 560 р.</span>
+                </div>
+              </a>
+            </div>
+            <ul class="page-header__mobile-nav">
+              <li class="page-header__mobile-item">
+                <a class="page-header__toggle page-header__toggle--phone" href="#">
+                  <svg class="page-header__icon" width="26" height="26">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg>
+                  <span class="visually-hidden">Показать телефоны</span>
+                </a>
+              </li>
+              <li class="page-header__mobile-item">
+                <a class="page-header__toggle page-header__toggle--user" href="#">
+                  <svg class="page-header__icon" width="32" height="26">
+                    <use xlink:href="#icon-user"></use>
+                  </svg>
+                  <span class="visually-hidden">Авторизироваться/зарегистироваться</span>
+                </a>
+              </li>
+              <li class="page-header__mobile-item">
+                <a class="page-header__toggle page-header__toggle--basket" href="#">
+                  <svg class="page-header__icon" width="34" height="30">
+                    <use xlink:href="#icon-basket"></use>
+                  </svg>
+                  <span class="visually-hidden">Перейти к корзине</span>
+                </a>
+              </li>
+              <li class="page-header__mobile-item">
+                <a class="page-header__toggle page-header__toggle--menu" href="#">
+                  <span class="page-header__toggle-line"></span>
+                  <span class="visually-hidden">Открыть меню</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="page-header__user user-list">
+          <li class="user-list__item">
+            <a class="user-list__link" href="#">Вход</a>
+          </li>
+          <li class="user-list__item">
+            <a class="user-list__link" href="#">Регистрация</a>
+          </li>
+        </ul>
+
+        <div class="page-header__site-list-wrapper">
+          <ul class="site-list">
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Главная</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Каталог</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Новости</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Акции!</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Купить</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Контакты</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Опт-ок Клуб</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">Обзоры, статьи</a>
+            </li>
+            <li class="site-list__item">
+              <a class="site-list__link" href="#">
+                <form class="site-list__form" action="#" method="post">
+                  <label class="visually-hidden" for="user-search">Поиск по сайту</label>
+                  <input class="site-list__field" id="user-search" type="search" name="search" placeholder="Поиск по сайту">
+                  <button class="visually-hidden" type="submit">Отправить</button>
+                </form>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="page-main">
+        <div class="page-main__container">
+          <div class="page-main__wrapper">
+            <section class="catalog-nav">
+              <ul class="catalog-nav__list">
+                <li class="catalog-nav__item catalog-nav__item--dropdown">
+                  <button class="catalog-nav__toggle" type="button">
+                    <span class="visually-hidden">Раскрыть раздел</span>
+                  </button>
+                  <input class="visually-hidden catalog-nav__input" id="fixed-blade-knives" type="checkbox" name="fixed-blade-knives">
+                  <label class="catalog-nav__label" for="fixed-blade-knives"><a class="catalog-nav__link" href="#">Ножи с фиксированным клинком</a></label>
+                  <ul class="catalog-nav__item-list sub-nav">
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="folding-knives" type="checkbox" name="folding-knives">
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="butterflies" type="checkbox" name="butterflies">
+                      <label class="sub-nav__label" for="butterflies"><a class="sub-nav__link" href="#">Бабочки (балисонги)</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="mechanical" type="checkbox" name="mechanical">
+                      <label class="sub-nav__label" for="mechanical"><a class="sub-nav__link" href="#">Механические</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="multifunctional" type="checkbox" name="multifunctional">
+                      <label class="sub-nav__label" for="multifunctional"><a class="sub-nav__link" href="#">Многофункциональные</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="automatic" type="checkbox" name="automatic">
+                      <label class="sub-nav__label" for="automatic"><a class="sub-nav__link" href="#">Автоматические</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="semi-automatic" type="checkbox" name="semi-automatic">
+                      <label class="sub-nav__label" for="semi-automatic"><a class="sub-nav__link" href="#">Полуавтоматические</a></label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="axes-shovels" type="checkbox" name="axes-shovels">
+                  <label class="catalog-nav__label" for="axes-shovels"><a class="catalog-nav__link" href="#">Топоры и лопаты</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="lanterns" type="checkbox" name="lanterns">
+                  <label class="catalog-nav__label" for="lanterns"><a class="catalog-nav__link" href="#">Фонари</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="crossbows" type="checkbox" name="crossbows">
+                  <label class="catalog-nav__label" for="crossbows"><a class="catalog-nav__link" href="#">Арбалеты</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="airguns-accessories" type="checkbox" name="airguns-accessories">
+                  <label class="catalog-nav__label" for="airguns-accessories"><a class="catalog-nav__link" href="#">Пневматическое оружие и комплектующие к нему</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="slingshots-sarbakans" type="checkbox" name="slingshots-sarbakans">
+                  <label class="catalog-nav__label" for="slingshots-sarbakans"><a class="catalog-nav__link" href="#">Рогатки и сарбаканы</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="tactical-pens" type="checkbox" name="tactical-pens">
+                  <label class="catalog-nav__label" for="tactical-pens"><a class="catalog-nav__link" href="#">Ручки тактические</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="knife-care-products" type="checkbox" name="knife-care-products">
+                  <label class="catalog-nav__label" for="knife-care-products"><a class="catalog-nav__link" href="#">Средства  ухода за ножами</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="cases-sheaths-holsters" type="checkbox" name="cases-sheaths-holsters">
+                  <label class="catalog-nav__label" for="cases-sheaths-holsters"><a class="catalog-nav__link" href="#">Чехлы, ножны и кобуры</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="paracord" type="checkbox" name="paracord">
+                  <label class="catalog-nav__label" for="paracord"><a class="catalog-nav__link" href="#">Паракорд</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="flasks-thermoses-dishes" type="checkbox" name="flasks-thermoses-dishes">
+                  <label class="catalog-nav__label" for="flasks-thermoses-dishes"><a class="catalog-nav__link" href="#">Фляги, термосы, посуда</a></label>
+                </li>
+                <li class="catalog-nav__item catalog-nav__item--dropdown">
+                  <button class="catalog-nav__toggle" type="button">
+                    <span class="visually-hidden">Раскрыть раздел</span>
+                  </button>
+                  <input class="visually-hidden catalog-nav__input" id="lighters" type="checkbox" name="lighters">
+                  <label class="catalog-nav__label catalog-nav__label--dropdown" for="lighters"><a class="catalog-nav__link" href="#">Зажигалки</a></label>
+                  <ul class="catalog-nav__item-list sub-nav">
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="gas" type="checkbox" name="gas">
+                      <label class="sub-nav__label" for="gas"><a class="sub-nav__link" href="#">Газовые</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="petrol" type="checkbox" name="petrol">
+                      <label class="sub-nav__label" for="petrol"><a class="sub-nav__link" href="#">Бензиновые</a></label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="gifts-souvenirs" type="checkbox" name="gifts-souvenirs">
+                  <label class="catalog-nav__label" for="gifts-souvenirs"><a class="catalog-nav__link" href="#">Подарки и сувениры</a></label>
+                </li>
+                <li class="catalog-nav__item catalog-nav__item--dropdown">
+                  <button class="catalog-nav__toggle" type="button">
+                    <span class="visually-hidden">Раскрыть раздел</span>
+                  </button>
+                  <input class="visually-hidden catalog-nav__input" id="accessories" type="checkbox" name="accessories">
+                  <label class="catalog-nav__label catalog-nav__label--dropdown" for="accessories"><a class="catalog-nav__link" href="#">Аксессуары</a></label>
+                  <ul class="catalog-nav__item-list sub-nav">
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="keychains" type="checkbox" name="keychains">
+                      <label class="sub-nav__label" for="keychains"><a class="sub-nav__link" href="#">Брелки</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="lanyards" type="checkbox" name="lanyards">
+                      <label class="sub-nav__label" for="lanyards"><a class="sub-nav__link" href="#">Темляки</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="bracelets" type="checkbox" name="bracelets">
+                      <label class="sub-nav__label" for="bracelets"><a class="sub-nav__link" href="#">Браслеты</a></label>
+                    </li>
+                    <li class="sub-nav__item">
+                      <input class="visually-hidden catalog-nav__input" id="carabiners" type="checkbox" name="carabiners">
+                      <label class="sub-nav__label" for="carabiners"><a class="sub-nav__link" href="#">Карабины</a></label>
+                    </li>
+                  </ul>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="other" type="checkbox" name="other">
+                  <label class="catalog-nav__label" for="other"><a class="catalog-nav__link" href="#">Прочее</a></label>
+                </li>
+              </ul>
+
+              <ul class="catalog-nav__list">
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="new" type="checkbox" name="new">
+                  <label class="catalog-nav__label catalog-nav__label--new" for="new"><a class="catalog-nav__link" href="#">Новинка</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="hit" type="checkbox" name="hit">
+                  <label class="catalog-nav__label" for="hit"><a class="catalog-nav__link" href="#">Хит продаж</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="sale" type="checkbox" name="sale">
+                  <label class="catalog-nav__label" for="sale"><a class="catalog-nav__link" href="#">Акция</a></label>
+                </li>
+                <li class="catalog-nav__item">
+                  <input class="visually-hidden catalog-nav__input" id="recommend" type="checkbox" name="recommend">
+                  <label class="catalog-nav__label" for="recommend"><a class="catalog-nav__link" href="#">Акция</a></label>
+                </li>
+              </ul>
+            </section>
+
+            <section class="filters">
+            </section>
+          </div>
+
+          <div class="page-main__wrapper">
+            <section class="slider promo">
+              <ul class="promo__slides">
+                <li class="promo__slide promo__slide--active promo__slide--1">
+                  <a class="promo__link">
+                    <div class="promo__wrapper">
+                      <h2 class="promo__slide-title">Ножи из Дамасской стали</h2>
+                    </div>
+                  </a>
+                  <div class="promo__wrapper promo__wrapper--descr">
+                    <p class="promo__slide-descr">Высокое качество оригинальный дизайн</p>
+                  </div>
+                </li>
+                <li class="promo__slide promo__slide--2">
+                  <a class="promo__link">
+                    <div class="promo__wrapper">
+                      <h2 class="promo__slide-title">Заголовок2</h2>
+                    </div>
+                  </a>
+                  <div class="promo__wrapper promo__wrapper--descr">
+                    <p class="promo__slide-descr">Описание</p>
+                  </div>
+                </li>
+                <li class="promo__slide promo__slide--3">
+                  <a class="promo__link">
+                    <div class="promo__wrapper">
+                      <h2 class="promo__slide-title">Заголовок3</h2>
+                    </div>
+                  </a>
+                  <div class="promo__wrapper promo__wrapper--descr">
+                    <p class="promo__slide-descr">Описание</p>
+                  </div>
+                </li>
+                <li class="promo__slide promo__slide--4">
+                  <a class="promo__link">
+                    <div class="promo__wrapper">
+                      <h2 class="promo__slide-title">Заголовок4</h2>
+                    </div>
+                  </a>
+                  <div class="promo__wrapper promo__wrapper--descr">
+                    <p class="promo__slide-descr">Описание</p>
+                  </div>
+                </li>
+              </ul>
+              <button class="promo__btn promo__btn--prev slider__btn">
+                <span class="visually-hidden">Предыдущий слайд</span>
+              </button>
+              <button class="promo__btn promo__btn--next slider__btn">
+                <span class="visually-hidden">Следующий слайд</span>
+              </button>
+              <ul class="slider__dots"></ul>
+            </section>
+
+            <section class="slider novelties-of-week">
+              <div class="novelties-of-week__wrapper">
+                <h2 class="novelties-of-week__title">Новинки недели</h2>
+                <ul class="novelties-of-week__slides">
+                  <li class="novelties-of-week__slide novelties-of-week__slide--active catalog-card catalog-card--novelties-of-week">
+                    <div class="catalog-card__img">
+                      <a class="catalog-card__link" href="#">
+                        <picture>
+                         <source type="image/webp" srcset="img/product-1.webp 1x, img/product-1@2x.webp 2x, img/product-1@3x.webp 3x">
+                          <img src="img/product-1@1x.jpg" srcset="img/product-1@2x.jpg 2x, img/product-1@3x.jpg 3x"alt="Изображение новинки недели" width="220" height="123">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="catalog-card__text">
+                      <h3 class="catalog-card__title">
+                        <a class="catalog-card__link" href="#">Нож браконьер</a>
+                      </h3>
+                      <span class="catalog-card__descr">Артикул 305-540421</span>
+                      <span class="catalog-card__descr">Производитель: Нокс</span>
+                      <div class="catalog-card__buy-wrapper">
+                        <span class="catalog-card__price">1 550 р.</span>
+                        <div class="quantity">
+                          <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                          <button type="button" class="quantity__arrow quantity__arrow--plus">
+                            <span class="visually-hidden">+</span>
+                          </button>
+                          <button type="button" class="quantity__arrow quantity__arrow--minus">
+                            <span class="visually-hidden">-</span>
+                          </button>
+                        </div>
+                        <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="novelties-of-week__slide catalog-card catalog-card--novelties-of-week">
+                    <div class="catalog-card__img">
+                      <a class="catalog-card__link" href="#">
+                        <picture>
+                         <source type="image/webp" srcset="img/product-1.webp 1x, img/product-1@2x.webp 2x, img/product-1@3x.webp 3x">
+                          <img src="img/product-1@1x.jpg" srcset="img/product-1@2x.jpg 2x, img/product-1@3x.jpg 3x"alt="Изображение новинки недели" width="220" height="123">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="catalog-card__text">
+                      <h3 class="catalog-card__title">
+                        <a class="catalog-card__link" href="#">Заголовок</a>
+                      </h3>
+                      <span class="catalog-card__descr">Артикул 305-540421</span>
+                      <span class="catalog-card__descr">Производитель: Нокс</span>
+                      <div class="catalog-card__buy-wrapper">
+                        <span class="catalog-card__price">1 550 р.</span>
+                        <div class="quantity">
+                          <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                          <button type="button" class="quantity__arrow quantity__arrow--plus">
+                            <span class="visually-hidden">+</span>
+                          </button>
+                          <button type="button" class="quantity__arrow quantity__arrow--minus">
+                            <span class="visually-hidden">-</span>
+                          </button>
+                        </div>
+                        <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button class="novelties-of-week__btn novelties-of-week__btn--prev slider__btn">
+                  <span class="visually-hidden">Предыдущий слайд</span>
+                </button>
+                <button class="novelties-of-week__btn novelties-of-week__btn--next slider__btn">
+                  <span class="visually-hidden">Следующий слайд</span>
+                </button>
+              </div>
+              <a class="novelties-of-week__more-info" href="#">Посмотреть все новинки</a>
+            </section>
+
+            <section class="slider discount">
+              <div class="discount__wrapper">
+                <h2 class="discount__title">Акции</h2>
+                <ul class="discount__slides">
+                  <li class="discount__slide discount__slide--active discount__item">
+                    <div class="discount__img">
+                      <a class="discount__link" href="#">
+                        <picture>
+                         <source type="image/webp" srcset="img/sale.webp 1x, img/sale@2x.webp 2x, img/sale@3x.webp 3x">
+                          <img src="img/sale.jpg" srcset="img/sale@2x.jpg 2x, img/sale@3x.jpg 3x"alt="Изображение процента скидки" width="251" height="170">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="discount__text">
+                      <h3 class="discount__item-title">
+                        <a class="discount__link" href="#">Скидка на всю продукцию Viking Nordway</a>
+                      </h3>
+                      <p class="discount__descr">Короткое описание акции в одну или две строчки</p>
+                      <div class="discount__quantity-wrapper">
+                        <span class="discount__quantity">50%</span>
+                        <a class="btn discount__item-btn" href="#">Подробнее</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="discount__slide discount__item">
+                    <div class="discount__img">
+                      <a class="discount__link" href="#">
+                        <picture>
+                         <source type="image/webp" srcset="img/sale.webp 1x, img/sale@2x.webp 2x, img/sale@3x.webp 3x">
+                          <img src="img/sale.jpg" srcset="img/sale@2x.jpg 2x, img/sale@3x.jpg 3x"alt="Изображение процента скидки" width="251" height="170">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="discount__text">
+                      <h3 class="discount__item-title">
+                        <a class="discount__link" href="#">Заголовок</a>
+                      </h3>
+                      <p class="discount__descr">Короткое описание акции в одну или две строчки</p>
+                      <div class="discount__quantity-wrapper">
+                        <span class="discount__quantity">50%</span>
+                        <a class="btn discount__item-btn" href="#">Подробнее</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button class="discount__btn discount__btn--prev slider__btn">
+                  <span class="visually-hidden">Предыдущий слайд</span>
+                </button>
+                <button class="discount__btn discount__btn--next slider__btn">
+                  <span class="visually-hidden">Следующий слайд</span>
+                </button>
+               </div>
+              <a class="discount__more-info" href="#">Посмотреть все акции</a>
+            </section>
+
+            <section class="company-info">
+              <p class="company-info__text"><b class="company-info__slogan">Мы предлагаем:</b> охотничьи и туристические ножи, кухонные и разделочные ножи, складные и выкидные ножи, специальные и спортивные ножи, метательные ножи, сувенирные и подарочные ножи и даже грибные ножи. У нас все это есть!</p>
+              <p class="company-info__text">В каталоге представлены российские ножи таких брендов, как ножи <span class="company-info__brand">Нокс</span> и ножи <span class="company-info__brand">Кизляр</span>, ножи <span class="company-info__brand">Саро</span> и <span class="company-info__brand">Витязь</span>, <span class="company-info__brand">VN pro</span> и <span class="company-info__brand">Viking</span>, а так же есть узбекские и таджикские ножи и многое другое. Предлагаем все для заточки ножей: точилки, бруски для заточки, алмазные бруски и т.д. Разумеется, вся продукция сертифицирована и разрешена к свободной продаже на территории РФ.</p>
+              <p class="company-info__text"><b class="company-info__slogan">Желаете купить ножи оптом?</b> Нет ничего проще! Регистрируетесь на сайте, заходите в раздел для клиентов, набираете ножи и кладете товар в “корзину”, нажимаете кнопку “оформить” и получаете счет. Оплачиваете (нал, безнал - как удобнее) и получаете товар. Можно забрать товар самостоятельно в офисе, а можно оформить доставку. Подробности смотрите в разделе “Купить”.</p>
+              <p class="company-info__text"><b class="company-info__slogan">Трудно работать с производителями?</b> Работайте с нами! Ножи от производителей по оптовым ценам, специальные скидки и распродажи, удобные условия работы! И все ножи, как правило, есть в наличии!</p>
+              <p class="company-info__text company-info__text--highlight"><b class="company-info__slogan">Мы работаем с любыми покупателями - </b>физическими и юридическими лицами. Условие только одно - минимальная сумма покупки 10000р. Очень любим крупных оптовиков - для них специальные условия и скидки до 30%.</p>
+              <p class="company-info__text">С удовольствием работаем с московскими магазинами, предлагаем им бесплатную доставку (при покупке на сумму от 25000р.), отсрочку платежа, поставку на условиях реализации. Уважаем покупателей из регионов - бесплатно доставим выбранный товар до транспортной компании в самый короткий срок! Но даже если Вы хотите приобрести пару ножей на сумму от 10000р.- милости просим!</p>
+              <p class="company-info__appeal">ЖДЕМ ВАШИХ ЗАКАЗОВ!</p>
+              <b class="company-info__slogan">С уважением, коллектив ОПТ-ОК.</b>
+            </section>
+          </div>
+
+          <div class="page-main__wrapper">
+            <section class="news">
+              <div class="news__container">
+                <h2 class="news__title">Новости</h2>
+                <ul class="news__list">
+                  <li class="news__item">
+                    <span class="news__date">28 июня</span>
+                    <a class="news__text">Хит продаж по результатам трех последних месяцев- это складные ножи от Нокс</a>
+                  </li>
+                  <li class="news__item">
+                    <span class="news__date">17 июня</span>
+                    <a class="news__text">Представляем Вам новинку на российском рынке- продукцию бренда “WITH ARMOUR”</a>
+                  </li>
+                  <li class="news__item">
+                    <span class="news__date">14 июня</span>
+                    <a class="news__text">Самый летний товар- "Мухобойки" MB-1 и MB-2 от Нокс защитят не только от насекомых.</a>
+                  </li>
+                </ul>
+                <a class="news__more-info" href="#">Все новости</a>
+              </div>
+            </section>
+
+            <section class="novelties">
+              <div class="novelties__container">
+                <h2 class="novelties__title">Новинки</h2>
+                <ul class="novelties__list">
+                  <li class="novelties__item catalog-card">
+                    <div class="catalog-card__img">
+                      <a class="catalog-card__link" href="#">
+                        <picture>
+                          <source type="image/webp" srcset="img/product-3.webp 1x, img/product-3@2x.webp 2x, img/product-3@3x.webp 3x">
+                          <img src="img/product-3@1x.jpg" srcset="img/product-3@2x.jpg 2x, img/product-3@3x.jpg 3x"alt="Изображение товара" width="210" height="95">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="catalog-card__text">
+                      <h3 class="catalog-card__title">
+                        <a class="catalog-card__link" href="#">Нож браконьер</a>
+                      </h3>
+                      <span class="catalog-card__descr">Артикул 305-540421</span>
+                      <span class="catalog-card__descr">Производитель: Нокс</span>
+                      <div class="catalog-card__buy-wrapper">
+                        <span class="catalog-card__price">1 550 р.</span>
+                        <div class="quantity">
+                          <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                          <button type="button" class="quantity__arrow quantity__arrow--plus">
+                            <span class="visually-hidden">+</span>
+                          </button>
+                          <button type="button" class="quantity__arrow quantity__arrow--minus">
+                            <span class="visually-hidden">-</span>
+                          </button>
+                        </div>
+                        <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <a class="novelties__more-info" href="#">Все новинки</a>
+              </div>
+            </section>
+
+            <section class="hits">
+              <div class="hits__container">
+                <h2 class="hits__title">Хиты продаж</h2>
+                <ul class="hits__list">
+                  <li class="hits__item catalog-card">
+                    <div class="catalog-card__img">
+                      <a class="catalog-card__link" href="#">
+                        <picture>
+                          <source type="image/webp" srcset="img/product-2.webp 1x, img/product-2@2x.webp 2x, img/product-2@3x.webp 3x">
+                          <img src="img/product-2@1x.jpg" srcset="img/product-2@2x.jpg 2x, img/product-2@3x.jpg 3x"alt="Изображение товара" width="221" height="97">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="catalog-card__text">
+                      <h3 class="catalog-card__title">
+                        <a class="catalog-card__link" href="#">Нож браконьер</a>
+                      </h3>
+                      <span class="catalog-card__descr">Артикул 305-540421</span>
+                      <span class="catalog-card__descr">Производитель: Нокс</span>
+                      <div class="catalog-card__buy-wrapper">
+                        <span class="catalog-card__price">1 550 р.</span>
+                        <div class="quantity">
+                          <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                          <button type="button" class="quantity__arrow quantity__arrow--plus">
+                            <span class="visually-hidden">+</span>
+                          </button>
+                          <button type="button" class="quantity__arrow quantity__arrow--minus">
+                            <span class="visually-hidden">-</span>
+                          </button>
+                        </div>
+                        <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <a class="hits__more-info" href="#">Все хиты</a>
+              </div>
+            </section>
+
+            <section class="reviews">
+              <div class="reviews__container">
+                <h2 class="reviews__title">Обзоры</h2>
+                <ul class="reviews__list">
+                  <li class="reviews__item">
+                    <div class="reviews__img">
+                      <a class="reviews__link" href="#">
+                        <picture>
+                          <source type="image/webp" srcset="img/review-1.webp 1x, img/review-1@2x.webp 2x, img/review-1@3x.webp 3x">
+                          <img src="img/review-1@1x.jpg" srcset="img/review-1@2x.jpg 2x, img/review-1@3x.jpg 3x"alt="Изображение товара" width="234" height="173">
+                        </picture>
+                      </a>
+                    </div>
+                    <div class="reviews__text">
+                      <h3 class="reviews__item-title">
+                        <a class="reviews__link" href="#">Обзор ножа для выживания Ganzo</a>
+                      </h3>
+                      <p class="reviews__descr">Складной туристический нож ganzo – идеальный вариант для выбора охотниками и рыбаками.</p>
+                    </div>
+                  </li>
+                </ul>
+                <a class="reviews__more-info" href="#">Все обзоры</a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
 
     <footer class="page-footer">
+      <div class="page-footer__container">
+        <div class="page-footer__block">
+          <h2 class="page-footer__block-title">Сервис</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__item">
+              <a class="page-footer__link">Гарантия</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Возврат</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">7 причин купить у Nozhikova</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Написать нам</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Вакансии</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Программа лояльности</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__block">
+          <h2 class="page-footer__block-title">Продукция</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__item">
+              <a class="page-footer__link">Каталог</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Хиты продаж</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Новинки</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Товары со скидкой</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Видеобзоры</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Подарочные сертификаты</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Nozhikov рекомендует</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__block">
+          <h2 class="page-footer__block-title">Полезное</h2>
+          <ul class="page-footer__list">
+            <li class="page-footer__item">
+              <a class="page-footer__link">О нас</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Отзывы</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Сотрудничество</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Договор оферты</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Статьи</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Мобильная версия</a>
+            </li>
+            <li class="page-footer__item">
+              <a class="page-footer__link">Наши партнеры</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__block footer-contacts">
+          <ul class="footer-contacts__list">
+            <li class="footer-contacts__item">
+              <a class="footer-contacts__phone" href="tel:8(800)3337099">8 800 333-70-99</a>
+              <span class="footer-contacts__note">(бесплатно из регионов РФ)</span>
+            </li>
+            <li class="footer-contacts__item">
+              <a class="footer-contacts__phone" href="tel:+7(495)9724991">+7 (495) 972-49-91</a>
+              <a class="footer-contacts__phone" href="tel:+7(926)7225949">+7 (926) 722-59-49</a>
+            </li>
+            <li class="footer-contacts__item">
+              <p class="footer-contacts__address">111033, г.Москва, Таможенный проезд, дом 6, офис 11a.</p>
+            </li>
+            <li class="footer-contacts__item">
+              <p class="footer-contacts__copyright">2008-2018 © Компания «Нокс» </p>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__bottom">
+          <form class="page-footer__form" action="#" method="post">
+            <label class="page-footer__label" for="subscribe-email">Подписка на рассылку</label>
+            <input class="page-footer__field" id="subscribe-email" type="email" name="subscribe-email" placeholder="Ваш e-mail">
+            <button class="btn page-footer__btn" type="submit">Отправить</button>
+          </form>
+          <div class="page-footer__payment">
+           <a href="" class="page-footer__payment-link">
+            <span class="visually-hidden">Visa</span>
+              <svg width="54" height="17">
+                <use xlink:href="#icon-visa"></use>
+              </svg>
+           </a>
+           <a href="" class="page-footer__payment-link">
+            <span class="visually-hidden">Mastercard</span>
+              <svg width="43" height="26">
+                <use xlink:href="#icon-mastercard"></use>
+              </svg>
+           </a>
+          </div>
+          <ul class="page-footer__docs">
+            <li class="page-footer__docs-item">
+              <a class="page-footer__docs-link" href="#">Публичная оферта</a>
+            </li>
+            <li class="page-footer__docs-item">
+              <a class="page-footer__docs-link" href="#">Пользовательское соглашение</a>
+            </li>
+            <li class="page-footer__docs-item">
+              <a class="page-footer__docs-link" href="#">Политика конфиденциальности</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
 
     <script src="js/picturefill.js"></script>

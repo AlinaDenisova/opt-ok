@@ -1,0 +1,41 @@
+.page-main__container {
+  background-color: #ffffff;
+  width: 93.75%;
+  margin: 0 3.125%;
+  padding-bottom: 105px;
+}
+
+.page-main__wrapper {
+  @include container;
+}
+
+@media (min-width: $desktop-width) {
+  .page-main__container {
+    @include desktop-width;
+    display: flex;
+    margin-top: 95px;
+    padding-bottom: 105px;
+  }
+
+  .page-main__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-right: 19px;
+    padding-top: 35px;
+
+    &:first-child {
+      width: 234px;
+    }
+
+    &:nth-child(2) {
+      width: 616px;
+    }
+
+    &:last-child {
+      width: 234px;
+      margin-right: 0;
+      padding-top: 25px;
+    }
+  }
+}

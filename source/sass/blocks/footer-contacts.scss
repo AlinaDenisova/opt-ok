@@ -1,0 +1,42 @@
+.footer-contacts__list {
+ @include list-reset;
+ padding-top: 5px;
+}
+
+.footer-contacts__item {
+  color: #ffffff;
+  padding-bottom: 20px;
+}
+
+.footer-contacts__phone {
+  color: inherit;
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.phone-list__note {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer-contacts__address {
+  margin: 0;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.footer-contacts__copyright {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 0;
+}
+
+@media (min-width: $desktop-width) {
+  .footer-contacts {
+    width: 280px;
+    box-sizing: border-box;
+    padding-left: 42px;
+  }
+}

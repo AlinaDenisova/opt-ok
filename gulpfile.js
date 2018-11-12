@@ -10,6 +10,7 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var rename = require("gulp-rename");
 var mincss = require("gulp-csso");
+var svgstore = require("gulp-svgstore");
 var imagemin = require("gulp-imagemin");
 var imageminJpegRecompress = require('imagemin-jpeg-recompress');
 var pngquant = require('imagemin-pngquant');
@@ -146,6 +147,24 @@ gulp.task('cleanBuild', function () { // удаляет папку "build"
   return del('build');
 });
 
+gulp.task('spriteDev', function() { // Оптимизирует SVG и создает спрайт для разработки
+  return gulp.src("source/img/icon-*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("dev/img"));
+});
+
+gulp.task('spriteBuild', function() { // Оптимизирует SVG и создает спрайт для билда
+  return gulp.src("source/img/icon-*.svg")
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename("sprite.svg"))
+    .pipe(gulp.dest("build/img"));
+});
+
 gulp.task('serve', function () { // Запускает сервер, при изменениях перезагружается
   browserSync.init({
     server: 'dev',
@@ -161,6 +180,6 @@ gulp.task('watch', function () { // Настройки вотчера
   gulp.watch('source/*.html', gulp.series('copyHTMLDev'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('styleDev', 'copyDev', 'webpDev', 'jsDev', 'copyHTMLDev',), gulp.parallel('clearCache', 'watch', 'serve')));
+gulp.task('dev', gulp.series(gulp.parallel('styleDev', 'copyDev', 'webpDev', 'jsDev',  gulp.series('spriteDev', 'copyHTMLDev')), gulp.parallel('clearCache', 'watch', 'serve')));
 
-gulp.task('build', gulp.series('cleanBuild', gulp.parallel('styleBuild', 'imagesBuild', 'copyBuild', 'webpBuild', 'jsBuild', 'jsMinBuild', gulp.series('copyHTMLBuild', 'clearCache'))));
+gulp.task('build', gulp.series('cleanBuild', gulp.parallel('styleBuild', 'imagesBuild', 'copyBuild', 'webpBuild', 'jsBuild', 'jsMinBuild', gulp.series('spriteBuild', 'copyHTMLBuild', 'clearCache'))));
