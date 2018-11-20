@@ -381,7 +381,21 @@ $(function() {
       }
     }
   });
-});
 
+  // $(".slider__btn--prev").click(function(){
+  //   $('.brands__slides').trigger("next.owl.carousel");
+  // });
+
+  // $(".slider__btn--next").click(function(){
+  //   $('.brands__slides').trigger("prev.owl.carousel");
+  // });
+});
+// $(document).ready(function(){
+// $(".site-list").on("click","a", function (event) {
+//  event.preventDefault();
+//  var id  = $(this).attr('href'),
+//      top = $(id).offset().top;
+//  $('body,html').animate({scrollTop: top}, 1500);
+// });
 
 //# sourceMappingURL=all.js.map
