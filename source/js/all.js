@@ -109,222 +109,279 @@ window.navigation = (function () {
 
 'use strict';
 
-//управление меню навигации
 window.catalogNav = (function () {
-  var catalogNav = document.querySelector('.catalog-nav');
+  if (catalogNav) {
+    var catalogNav = document.querySelector('.catalog-nav');
 
-  var dropdownItem = function (item) {
-    var openedItems = document.querySelectorAll('.catalog-nav__toggle--active');
-    if (item.classList.contains('catalog-nav__toggle--active')) {
-      item.classList.remove('catalog-nav__toggle--active');
-    } else {
-      item.classList.add('catalog-nav__toggle--active');
-    }
-  };
-
-  //выбор выпадающего списка
-  var dropdownItemHandler = function (evt) {
-    var target = evt.target;
-      while (target !== catalogNav) {
-        if (target.classList.contains('catalog-nav__toggle')) {
-          dropdownItem(target);
-          break;
-        }
-        target = target.parentNode;
+    var dropdownItem = function (item) {
+      var openedItems = document.querySelectorAll('.catalog-nav__toggle--active');
+      [].forEach.call(openedItems, function (openedItem) {
+        openedItem !== item && openedItem.classList.remove('catalog-nav__toggle--active');
+      });
+      if (item.classList.contains('catalog-nav__toggle--active')) {
+        item.classList.remove('catalog-nav__toggle--active');
+      } else {
+        item.classList.add('catalog-nav__toggle--active');
       }
-  };
+    };
 
-  catalogNav.addEventListener('click', dropdownItemHandler);
+    //выбор выпадающего списка
+    var dropdownItemHandler = function (evt) {
+      var target = evt.target;
+        while (target !== catalogNav) {
+          if (target.classList.contains('catalog-nav__toggle')) {
+            dropdownItem(target);
+            break;
+          }
+          target = target.parentNode;
+        }
+    };
+
+    catalogNav.addEventListener('click', dropdownItemHandler);
+  }
 })();
 
 'use strict';
 
 (function () {
-  var promo = document.querySelector('.promo');
-  var promoSlides = promo.querySelectorAll('.promo__slide');
-  var activePromoSlideIndex = [].indexOf.call(promoSlides, promo.querySelector('.promo__slide--active'));
-  var novelties = document.querySelector('.novelties-of-week');
-  var noveltiesSlides = novelties.querySelectorAll('.novelties-of-week__slide');
-  var activeNoveltiesSlideIndex = [].indexOf.call(noveltiesSlides, novelties.querySelector('.novelties-of-week__slide--active'));
-  var discount = document.querySelector('.discount');
-  var discountSlides = discount.querySelectorAll('.discount__slide');
-  var activeDiscountSlideIndex = [].indexOf.call(discountSlides, discount.querySelector('.discount__slide--active'));
-  var dots = null;
-  var dotsContainer = promo.querySelector('.slider__dots');
-  var btnPromoPrev = promo.querySelector('.promo__btn--prev');
-  var btnPromoNext = promo.querySelector('.promo__btn--next');
-  var btnNoveltiesPrev = novelties.querySelector('.novelties-of-week__btn--prev');
-  var btnNoveltiesNext = novelties.querySelector('.novelties-of-week__btn--next');
-  var btnDiscountPrev = discount.querySelector('.discount__btn--prev');
-  var btnDiscountNext = discount.querySelector('.discount__btn--next');
-  var PREV = 'prev';
-  var NEXT = 'next';
+  if (promo && discount && novelties) {
+    var promo = document.querySelector('.promo');
+    var promoSlides = promo.querySelectorAll('.promo__slide');
+    var activePromoSlideIndex = [].indexOf.call(promoSlides, promo.querySelector('.promo__slide--active'));
+    var novelties = document.querySelector('.novelties-of-week');
+    var noveltiesSlides = novelties.querySelectorAll('.novelties-of-week__slide');
+    var activeNoveltiesSlideIndex = [].indexOf.call(noveltiesSlides, novelties.querySelector('.novelties-of-week__slide--active'));
+    var discount = document.querySelector('.discount');
+    var discountSlides = discount.querySelectorAll('.discount__slide');
+    var activeDiscountSlideIndex = [].indexOf.call(discountSlides, discount.querySelector('.discount__slide--active'));
+    var dots = null;
+    var dotsContainer = promo.querySelector('.slider__dots');
+    var btnPromoPrev = promo.querySelector('.promo__btn--prev');
+    var btnPromoNext = promo.querySelector('.promo__btn--next');
+    var btnNoveltiesPrev = novelties.querySelector('.novelties-of-week__btn--prev');
+    var btnNoveltiesNext = novelties.querySelector('.novelties-of-week__btn--next');
+    var btnDiscountPrev = discount.querySelector('.discount__btn--prev');
+    var btnDiscountNext = discount.querySelector('.discount__btn--next');
+    var PREV = 'prev';
+    var NEXT = 'next';
 
-  var renderDots = function () {
-    var dot = null;
-    for (var i = 0; i < promoSlides.length; i++) {
-      dot = document.createElement('li');
-      dot.classList.add('slider__dot');
-      dotsContainer.appendChild(dot);
-    }
-
-    dots = dotsContainer.querySelectorAll('.slider__dot');
-    dots[activePromoSlideIndex].classList.add('slider__dot--active');
-  };
-
-  var activatePromoSlide = function () {
-    promoSlides[activePromoSlideIndex].classList.add('promo__slide--active');
-    dots[activePromoSlideIndex].classList.add('slider__dot--active');
-  };
-
-  var deactivatePromoSlide = function () {
-    promoSlides[activePromoSlideIndex].classList.remove('promo__slide--active');
-    dots[activePromoSlideIndex].classList.remove('slider__dot--active');
-  };
-
-  var activateNoveltiesSlide = function () {
-    noveltiesSlides[activeNoveltiesSlideIndex].classList.add('novelties-of-week__slide--active');
-  };
-
-  var deactivateNoveltiesSlide = function () {
-    noveltiesSlides[activeNoveltiesSlideIndex].classList.remove('novelties-of-week__slide--active');
-  };
-
-  var activateDiscountSlide = function () {
-    discountSlides[activeDiscountSlideIndex].classList.add('discount__slide--active');
-  };
-
-  var deactivateDiscountSlide = function () {
-    discountSlides[activeDiscountSlideIndex].classList.remove('discount__slide--active');
-  };
-
-
-  var nextPromoSlide = function (direction) {
-    deactivatePromoSlide();
-    switch (direction) {
-      case PREV:
-        if (--activePromoSlideIndex < 0) {
-          activePromoSlideIndex = promoSlides.length - 1;
-        }
-        break;
-      case NEXT:
-        if (++activePromoSlideIndex > promoSlides.length - 1) {
-          activePromoSlideIndex = 0;
-        }
-        break;
-    }
-    activatePromoSlide();
-  };
-
-  var nextNoveltiesSlide = function (direction) {
-    deactivateNoveltiesSlide();
-    switch (direction) {
-      case PREV:
-        if (--activeNoveltiesSlideIndex < 0) {
-          activeNoveltiesSlideIndex = noveltiesSlides.length - 1;
-        }
-        break;
-      case NEXT:
-        if (++activeNoveltiesSlideIndex > noveltiesSlides.length - 1) {
-          activeNoveltiesSlideIndex = 0;
-        }
-        break;
-    }
-    activateNoveltiesSlide();
-  };
-
-  var nextDiscountSlide = function (direction) {
-    deactivateDiscountSlide();
-    switch (direction) {
-      case PREV:
-        if (--activeDiscountSlideIndex < 0) {
-          activeDiscountSlideIndex = discountSlides.length - 1;
-        }
-        break;
-      case NEXT:
-        if (++activeDiscountSlideIndex > discountSlides.length - 1) {
-          activeDiscountSlideIndex = 0;
-        }
-        break;
-    }
-    activateDiscountSlide();
-  };
-
-  var onDotCLick = function (evt) {
-    var target = evt.target;
-
-    while (target !== dotsContainer) {
-      if (target.classList.contains('slider__dot')) {
-        deactivatePromoSlide();
-        activePromoSlideIndex = [].indexOf.call(dots, target);
-        activatePromoSlide();
-        break;
+    var renderDots = function () {
+      var dot = null;
+      for (var i = 0; i < promoSlides.length; i++) {
+        dot = document.createElement('li');
+        dot.classList.add('slider__dot');
+        dotsContainer.appendChild(dot);
       }
-      target = target.parentNode;
-    }
-  };
 
-  var onClickPromoPrev = function () {
-    nextPromoSlide(PREV);
-  };
+      dots = dotsContainer.querySelectorAll('.slider__dot');
+      dots[activePromoSlideIndex].classList.add('slider__dot--active');
+    };
 
-  var onClickPromoNext = function () {
-    nextPromoSlide(NEXT);
-  };
+    var activatePromoSlide = function () {
+      promoSlides[activePromoSlideIndex].classList.add('promo__slide--active');
+      dots[activePromoSlideIndex].classList.add('slider__dot--active');
+    };
 
-  var onClickNoveltiesPrev = function () {
-    nextNoveltiesSlide(PREV);
-  };
+    var deactivatePromoSlide = function () {
+      promoSlides[activePromoSlideIndex].classList.remove('promo__slide--active');
+      dots[activePromoSlideIndex].classList.remove('slider__dot--active');
+    };
 
-  var onClickNoveltiesNext = function () {
-    nextNoveltiesSlide(NEXT);
-  };
+    var activateNoveltiesSlide = function () {
+      noveltiesSlides[activeNoveltiesSlideIndex].classList.add('novelties-of-week__slide--active');
+    };
 
-  var onClickDiscountPrev = function () {
-    nextDiscountSlide(PREV);
-  };
+    var deactivateNoveltiesSlide = function () {
+      noveltiesSlides[activeNoveltiesSlideIndex].classList.remove('novelties-of-week__slide--active');
+    };
 
-  var onClickDiscountNext = function () {
-    nextDiscountSlide(NEXT);
-  };
+    var activateDiscountSlide = function () {
+      discountSlides[activeDiscountSlideIndex].classList.add('discount__slide--active');
+    };
 
-  renderDots();
-  btnPromoPrev.addEventListener('click', onClickPromoPrev);
-  dotsContainer.addEventListener('click', onDotCLick);
-  btnPromoNext.addEventListener('click', onClickPromoNext);
-  btnNoveltiesPrev.addEventListener('click', onClickNoveltiesPrev);
-  btnNoveltiesNext.addEventListener('click', onClickNoveltiesNext);
-  btnDiscountPrev.addEventListener('click', onClickDiscountPrev);
-  btnDiscountNext.addEventListener('click', onClickDiscountNext);
+    var deactivateDiscountSlide = function () {
+      discountSlides[activeDiscountSlideIndex].classList.remove('discount__slide--active');
+    };
+
+
+    var nextPromoSlide = function (direction) {
+      deactivatePromoSlide();
+      switch (direction) {
+        case PREV:
+          if (--activePromoSlideIndex < 0) {
+            activePromoSlideIndex = promoSlides.length - 1;
+          }
+          break;
+        case NEXT:
+          if (++activePromoSlideIndex > promoSlides.length - 1) {
+            activePromoSlideIndex = 0;
+          }
+          break;
+      }
+      activatePromoSlide();
+    };
+
+    var nextNoveltiesSlide = function (direction) {
+      deactivateNoveltiesSlide();
+      switch (direction) {
+        case PREV:
+          if (--activeNoveltiesSlideIndex < 0) {
+            activeNoveltiesSlideIndex = noveltiesSlides.length - 1;
+          }
+          break;
+        case NEXT:
+          if (++activeNoveltiesSlideIndex > noveltiesSlides.length - 1) {
+            activeNoveltiesSlideIndex = 0;
+          }
+          break;
+      }
+      activateNoveltiesSlide();
+    };
+
+    var nextDiscountSlide = function (direction) {
+      deactivateDiscountSlide();
+      switch (direction) {
+        case PREV:
+          if (--activeDiscountSlideIndex < 0) {
+            activeDiscountSlideIndex = discountSlides.length - 1;
+          }
+          break;
+        case NEXT:
+          if (++activeDiscountSlideIndex > discountSlides.length - 1) {
+            activeDiscountSlideIndex = 0;
+          }
+          break;
+      }
+      activateDiscountSlide();
+    };
+
+    var onDotCLick = function (evt) {
+      var target = evt.target;
+
+      while (target !== dotsContainer) {
+        if (target.classList.contains('slider__dot')) {
+          deactivatePromoSlide();
+          activePromoSlideIndex = [].indexOf.call(dots, target);
+          activatePromoSlide();
+          break;
+        }
+        target = target.parentNode;
+      }
+    };
+
+    var onClickPromoPrev = function () {
+      nextPromoSlide(PREV);
+    };
+
+    var onClickPromoNext = function () {
+      nextPromoSlide(NEXT);
+    };
+
+    var onClickNoveltiesPrev = function () {
+      nextNoveltiesSlide(PREV);
+    };
+
+    var onClickNoveltiesNext = function () {
+      nextNoveltiesSlide(NEXT);
+    };
+
+    var onClickDiscountPrev = function () {
+      nextDiscountSlide(PREV);
+    };
+
+    var onClickDiscountNext = function () {
+      nextDiscountSlide(NEXT);
+    };
+
+    renderDots();
+    btnPromoPrev.addEventListener('click', onClickPromoPrev);
+    dotsContainer.addEventListener('click', onDotCLick);
+    btnPromoNext.addEventListener('click', onClickPromoNext);
+    btnNoveltiesPrev.addEventListener('click', onClickNoveltiesPrev);
+    btnNoveltiesNext.addEventListener('click', onClickNoveltiesNext);
+    btnDiscountPrev.addEventListener('click', onClickDiscountPrev);
+    btnDiscountNext.addEventListener('click', onClickDiscountNext);
+  }
 })();
 
 
-(function quantityProducts() {
-    var quantityArrowsMinus = document.querySelectorAll(".quantity__arrow--minus");
-    var quantityArrowsPlus = document.querySelectorAll(".quantity__arrow--plus");
-    var quantityFields= document.querySelectorAll(".quantity__field");
-
-    function quantityMinus() {
-      for (var i = 0; i < quantityFields.length; i++) {
-        if (quantityFields[i].value > 1) {
-          quantityFields[i].value + quantityFields[i].value --;
-        }
+jQuery(document).ready(function($) {
+    $('.quantity > button').on('click', function() {
+    var input = $(this).closest('.quantity').find('input');
+    var value = parseInt(input.val()) || 0;
+    if ($(this).hasClass('quantity__arrow--minus')) {
+      if (value > 1) {
+      value = value - 1;
       }
-    };
-
-    function quantityPlus() {
-      for (var i = 0; i < quantityFields.length; i++) {
-        quantityFields[i].value + quantityFields[i].value ++;
-      }
-    };
-
-    for (var i = 0; i < quantityArrowsMinus.length; i++) {
-      quantityArrowsMinus[i].addEventListener('click', quantityMinus);
     }
-
-    for (var i = 0; i < quantityArrowsPlus.length; i++) {
-      quantityArrowsPlus[i].addEventListener('click', quantityPlus);
+    if ($(this).hasClass('quantity__arrow--plus')) {
+      value = value + 1;
     }
+    input.val(value).change();
   })();
+});
+
+jQuery(document).ready(function($) {
+  (function() {
+    var highlightColor = 'rgba(0, 1, 1, 0.2)',
+    highlightColorRed = '#7f0406',
+    $table = $('.catalog-table'),
+    previousColumnIndex;
+
+    $table
+    .on('mouseover','td', function() {
+      var $cell = $(this),
+        index = previousColumnIndex = $cell.index();
+
+      $table.find('.catalog-table__row').each(function() {
+        $(this).children().eq(index).css('background-color', highlightColor);
+      })
+      $table.find('.catalog-table__title').each(function() {
+        $(this).children().eq(index).css('background-color', highlightColorRed);
+      })
+    })
+
+    .on('mouseout','td', function() {
+      $table.find('tr').each(function() {
+        $(this).children().eq(previousColumnIndex).css('background-color', '');
+      })
+    })
+  })();
+});
+
+$(function() {
+  $('.brands__slides').owlCarousel({
+    items: 1,
+    loop: true,
+    nav: true,
+    navContainerClass: ['slider-nav', 'slider-nav--brands'],
+    navClass: ['slider__btn slider__btn--prev', 'slider__btn slider__btn--next'],
+    responsive: {
+      768: {
+        items: 3
+      },
+      1140: {
+        items: 6
+      }
+    }
+  });
+
+  $('.sections__slides').owlCarousel({
+    items: 1,
+    loop: true,
+    nav: true,
+    navContainerClass: ['slider-nav', 'slider-nav--sections'],
+    navClass: ['slider__btn slider__btn--prev', 'slider__btn slider__btn--next'],
+    responsive: {
+      768: {
+        items: 3
+      },
+      1140: {
+        items: 4
+      }
+    }
+  });
+});
+
 
 //# sourceMappingURL=all.js.map

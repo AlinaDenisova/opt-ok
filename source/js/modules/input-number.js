@@ -1,27 +1,15 @@
-(function quantityProducts() {
-    var quantityArrowsMinus = document.querySelectorAll(".quantity__arrow--minus");
-    var quantityArrowsPlus = document.querySelectorAll(".quantity__arrow--plus");
-    var quantityFields= document.querySelectorAll(".quantity__field");
-
-    function quantityMinus() {
-      for (var i = 0; i < quantityFields.length; i++) {
-        if (quantityFields[i].value > 1) {
-          quantityFields[i].value + quantityFields[i].value --;
-        }
+jQuery(document).ready(function($) {
+    $('.quantity > button').on('click', function() {
+    var input = $(this).closest('.quantity').find('input');
+    var value = parseInt(input.val()) || 0;
+    if ($(this).hasClass('quantity__arrow--minus')) {
+      if (value > 1) {
+      value = value - 1;
       }
-    };
-
-    function quantityPlus() {
-      for (var i = 0; i < quantityFields.length; i++) {
-        quantityFields[i].value + quantityFields[i].value ++;
-      }
-    };
-
-    for (var i = 0; i < quantityArrowsMinus.length; i++) {
-      quantityArrowsMinus[i].addEventListener('click', quantityMinus);
     }
-
-    for (var i = 0; i < quantityArrowsPlus.length; i++) {
-      quantityArrowsPlus[i].addEventListener('click', quantityPlus);
+    if ($(this).hasClass('quantity__arrow--plus')) {
+      value = value + 1;
     }
+    input.val(value).change();
   })();
+});

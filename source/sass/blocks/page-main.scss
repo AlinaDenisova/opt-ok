@@ -5,7 +5,8 @@
   padding-bottom: 105px;
 }
 
-.page-main__wrapper {
+.page-main__wrapper,
+.page-main__wrapper-column {
   @include container;
 }
 
@@ -15,6 +16,10 @@
     display: flex;
     margin-top: 95px;
     padding-bottom: 105px;
+
+    &--column {
+      flex-direction: column;
+    }
   }
 
   .page-main__wrapper {
@@ -37,5 +42,9 @@
       margin-right: 0;
       padding-top: 25px;
     }
+  }
+
+  .page-main__wrapper-column {
+    padding: 0;
   }
 }

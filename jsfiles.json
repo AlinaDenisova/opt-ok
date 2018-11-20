@@ -3,5 +3,7 @@
   "source/js/modules/navigation.js",
   "source/js/modules/catalog-nav.js",
   "source/js/modules/slider.js",
-  "source/js/modules/input-number.js"
+  "source/js/modules/input-number.js",
+  "source/js/modules/catalog-table.js",
+  "source/js/modules/filter-slider.js"
 ]

@@ -111,7 +111,7 @@ gulp.task('styleBuild', function () { // Создает из стилей sass s
 });
 
 gulp.task('copyDev', function () { // копирует файлы для разработки
-  return gulp.src('source/{fonts,js,img}/*.*', {since: gulp.lastRun('copyDev')})
+  return gulp.src('source/{fonts,js,img}/**/*.*', {since: gulp.lastRun('copyDev')})
   .pipe(newer('dev'))
   .pipe(gulp.dest('dev'))
 });
