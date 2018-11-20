@@ -94,7 +94,7 @@ gulp.task('styleDev', function () { // Создает из стилей sass sty
       cascade: false,
       grid: true
     }))
-    .pipe(gulp.dest('dev/css'))
+    .pipe(gulp.dest('source/css'))
 });
 
 gulp.task('styleBuild', function () { // Создает из стилей sass style.css, расставляет префиксы, минифицирует (билд)
