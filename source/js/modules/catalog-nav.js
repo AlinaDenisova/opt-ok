@@ -1,5 +1,3 @@
-'use strict';
-
 window.catalogNav = (function () {
   if (catalogNav) {
     var catalogNav = document.querySelector('.catalog-nav');

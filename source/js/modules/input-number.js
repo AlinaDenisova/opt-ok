@@ -1,3 +1,5 @@
+'use strict';
+
 jQuery(document).ready(function($) {
     $('.quantity > button').on('click', function() {
     var input = $(this).closest('.quantity').find('input');
