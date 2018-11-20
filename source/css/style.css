@@ -1781,9 +1781,9 @@ input::-webkit-inner-spin-button {
     height: 10px;
     position: absolute;
     right: 0;
-    top: 8px; }
+    top: 4px; }
     .quantity__arrow--minus {
-      top: 22px; }
+      top: 19px; }
     .quantity__arrow::after {
       content: "";
       position: absolute;
@@ -2778,7 +2778,7 @@ input::-webkit-inner-spin-button {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 23px 12px 23px 17px; }
+  padding: 5px 12px 10px 17px; }
 
 .sections__title {
   font-size: 16px;
@@ -2808,7 +2808,10 @@ input::-webkit-inner-spin-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .sections__offers-item {
   margin-right: 23px; }
@@ -2834,7 +2837,8 @@ input::-webkit-inner-spin-button {
   line-height: 20px;
   color: #252525;
   text-decoration: underline;
-  margin: 0; }
+  margin: 0;
+  font-weight: normal; }
 
 .sections__slides {
   margin: 0;
@@ -2864,12 +2868,20 @@ input::-webkit-inner-spin-button {
 
 .sections__img-wrapper {
   min-height: 54px;
-  min-width: 112px; }
+  min-width: 112px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
   .sections__img-wrapper img {
     display: block;
     height: auto;
     width: auto;
-    margin: 0 auto;
     -ms-touch-action: none;
     touch-action: none; }
 
@@ -2881,7 +2893,20 @@ input::-webkit-inner-spin-button {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    flex-direction: row; } }
+    flex-direction: row; }
+  .sections__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-top: 12px; }
+  .sections__wrapper {
+    width: 58.5%; }
+  .sections__title-wrapper {
+    margin-right: 70px; } }
 
 .catalog-table {
   border-collapse: collapse; }
@@ -2945,3 +2970,11 @@ input::-webkit-inner-spin-button {
 .catalog-table__link {
   color: #a70407;
   text-decoration: underline; }
+
+.catalog-table__btn {
+  background-color: #a70407;
+  background-image: none;
+  width: 90px;
+  font-size: 11px;
+  padding: 13px 15px;
+  margin-top: 5px; }
