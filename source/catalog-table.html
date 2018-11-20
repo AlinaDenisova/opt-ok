@@ -302,19 +302,19 @@
             <div style="overflow-x:auto;">
               <table class="catalog-table">
                 <tr class="catalog-table__title">
-                  <th class="catalog-table__title">Фото</th>
-                  <th class="catalog-table__title">Артикул</th>
-                  <th class="catalog-table__title">Название</th>
-                  <th class="catalog-table__title">Производитель</th>
-                  <th class="catalog-table__title">Категория</th>
-                  <th class="catalog-table__title">Описание</th>
-                  <th class="catalog-table__title">Материал</th>
-                  <th class="catalog-table__title">Цена (Розница, руб.)</th>
-                  <th class="catalog-table__title">Цена (Опт, руб.)</th>
-                  <th class="catalog-table__title">Скидка</th>
-                  <th class="catalog-table__title">Примечание</th>
-                  <th class="catalog-table__title">На складе</th>
-                  <th class="catalog-table__title">Ваш заказ</th>
+                  <th>Фото</th>
+                  <th >Артикул</th>
+                  <th>Название</th>
+                  <th>Производитель</th>
+                  <th>Категория</th>
+                  <th>Описание</th>
+                  <th>Материал</th>
+                  <th>Цена (Розница, руб.)</th>
+                  <th>Цена (Опт, руб.)</th>
+                  <th>Скидка</th>
+                  <th>Примечание</th>
+                  <th>На складе</th>
+                  <th>Ваш заказ</th>
                 </tr>
                 <tr class="catalog-table__row">
                   <td class="catalog-table__item catalog-table__item--img">
@@ -328,14 +328,206 @@
                   <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
                   <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
                   <td class="catalog-table__item">Сталь AUSB</td>
-                  <td class="catalog-table__item catalog-table__item--price">2410 р.</td>
-                  <td class="catalog-table__item">
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
                     <a class="catalog-table__link">Войти</a>
                   </td>
                   <td class="catalog-table__item">до 25%</td>
                   <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
-                  <td class="catalog-table__item">В наличии</td>
-                  <td class="catalog-table__item">
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
+                    <div class="quantity">
+                      <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                      <button type="button" class="quantity__arrow quantity__arrow--plus">
+                        <span class="visually-hidden">+</span>
+                      </button>
+                      <button type="button" class="quantity__arrow quantity__arrow--minus">
+                        <span class="visually-hidden">-</span>
+                      </button>
+                    </div>
+                    <a class="btn catalog-table__btn" href="#">В Корзину</a>
+                  </td>
+                </tr>
+                <tr class="catalog-table__row">
+                  <td class="catalog-table__item catalog-table__item--img">
+                    <picture>
+                      <img src="img/product-table.jpg" alt="Изображение товара" width="70" height="37">
+                    </picture>
+                  </td>
+                  <td class="catalog-table__item">Burgut 39133</td>
+                  <td class="catalog-table__item">Burgut</td>
+                  <td class="catalog-table__item">Кизляр</td>
+                  <td class="catalog-table__item">Ножи с фиксиро&shy;ванным клинком, Охотничьи/туристичес&shy;кие ножи</td>
+                  <td class="catalog-table__item">Тяжелый походный нож Бургут, Общая длина: 350 мм Длина клинка: 210 мм Сталь: AUSB Толщина клинка: 4,6 мм Ножны: кожа</td>
+                  <td class="catalog-table__item">Сталь AUSB</td>
+                  <td class="catalog-table__item catalog-table__item--retail">2410 р.</td>
+                  <td class="catalog-table__item catalog-table__item--wholesale">
+                    <a class="catalog-table__link">Войти</a>
+                  </td>
+                  <td class="catalog-table__item">до 25%</td>
+                  <td class="catalog-table__item">Хит продаж, Новинка, Рекомендуем, Сейчас самый сезон!</td>
+                  <td class="catalog-table__item catalog-table__item--availability">В наличии</td>
+                  <td class="catalog-table__item catalog-table__item--order">
                     <div class="quantity">
                       <input class="quantity__field " type="number" name="quantity" min="1" value="1">
                       <button type="button" class="quantity__arrow quantity__arrow--plus">

@@ -1,15 +1,6 @@
 .catalog-table {
-  border-collapse: collapse;
-
-  & td,
-  & th {
-    border-left: 2px solid #ffffff;
-  }
-
-  & th:first-child,
-  & td:first-child {
-    border-left: none;
-  }
+  border-collapse: separate;
+  border-spacing: 2px 10px;
 }
 
 .catalog-table__title {
@@ -19,24 +10,24 @@
     font-size: 14px;
     font-weight: 500;
     color: #ffffff;
-    line-height: 20px;
+    line-height: 16px;
     vertical-align: top;
     text-align: left;
-    min-height: 40px;
+    min-height: 45px;
     padding: 0;
-    padding: 0 7px;
-    padding-top: 10px;
+    padding: 5px 7px;
     max-width: 115px;
     box-sizing: border-box;
   }
 }
 
 .catalog-table__item {
+  border-top: 1px solid #e2e6ea;
   max-width: 115px;
   padding: 0;
   padding: 0 7px;
   box-sizing: border-box;
-  padding-top: 10px;
+  padding-top: 15px;
   vertical-align: top;
   text-align: left;
   word-wrap: break-word;
@@ -58,11 +49,25 @@
     background-color: #ffffff;
   }
 
-  &--price {
+  &--retail {
     color: $red;
     font-size: 16px;
     line-height: 14px;
     font-weight: 700;
+    width: 110px;
+  }
+
+  &--wholesale {
+    width: 78px;
+  }
+
+  &--availability {
+    width: 83px;
+  }
+
+  &--order {
+    padding: 0;
+    padding-top: 15px;
   }
 }
 
