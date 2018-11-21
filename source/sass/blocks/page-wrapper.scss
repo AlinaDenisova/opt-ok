@@ -5,14 +5,4 @@
   background-size: cover;
   background-position: 50% 0;
   width: 100%;
-
-  @media (min-resolution: $retina-2dpi), (min-resolution: $retina-2dppx) {
-    background-image: url("../img/bg@2x.jpg");
-    background-size: 2072px auto;
-  }
-
-  @media (min-resolution: $retina-3dpi), (min-resolution: $retina-3dppx) {
-    background-image: url("../img/bg@3x.jpg");
-    background-size: 2072px auto;
-  }
 }

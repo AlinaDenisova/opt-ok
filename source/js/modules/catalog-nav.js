@@ -1,6 +1,8 @@
+'use strict';
+
 window.catalogNav = (function () {
-  if (catalogNav) {
     var catalogNav = document.querySelector('.catalog-nav');
+    if (catalogNav) {
 
     var dropdownItem = function (item) {
       var openedItems = document.querySelectorAll('.catalog-nav__toggle--active');

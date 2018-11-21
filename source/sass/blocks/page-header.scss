@@ -1,8 +1,8 @@
 .page-header {
-  background-color: #5e0203;
   max-height: 65px;
-  box-shadow: 0 20px 70px 20px rgba(1, 1, 1, 0.5);
-  background-image: radial-gradient(circle farthest-corner at 0 0, #f8d1d2, transparent);
+  background-image: url("../img/bg-header.png");
+  background-repeat: repeat-x;
+  background-size: auto;
   position: relative;
 }
 
@@ -15,6 +15,17 @@
 
 .page-header__logo {
   padding-top: 5px;
+  position: relative;
+
+  &::before {
+    content: '';
+    top: -10px;
+    left: -50px;
+    position: absolute;
+    background-image: url("../img/bg-light.png");
+    width: 187px;
+    height: 75px;
+  }
 }
 
 .page-header__logo-link {
@@ -24,9 +35,10 @@
 .page-header__logo-img {
   border-radius: 50%;
   background-image: radial-gradient(circle at 50% 0%, #ffffff, transparent);
-  background-size: 70px 45px;
+  background-size: 65px 45px;
   background-position: 10px 5px;
   background-repeat: no-repeat;
+  z-index: 3;
 }
 
 .page-header__title {
@@ -120,16 +132,37 @@
 }
 
 @media (min-width: $desktop-width) {
+  .page-header {
+    position: relative;
+    max-height: 170px;
+  }
+
   .page-header__container {
     @include desktop-width;
     padding: 0;
-    padding-left: 10px;
     justify-content: space-between;
+
+    &::before {
+      content: '';
+      top: -30px;
+      left: -50px;
+      position: absolute;
+      background-image: url("../img/bg-light.png");
+      width: 187px;
+      height: 157px;
+    }
   }
 
   .page-header__logo {
     margin-right: 4%;
     width: 30.2%;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      display: none;
+    }
   }
 
   .page-header__logo-img {
@@ -277,7 +310,7 @@
     background-image: none;
     background-repeat: no-repeat;
     justify-content: flex-end;
-    margin-top: -15px;
+    margin-top: -35px;
     margin-bottom: 15px;
 
     & li {

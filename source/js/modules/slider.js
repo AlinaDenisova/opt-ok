@@ -1,26 +1,27 @@
 'use strict';
 
 (function () {
-  if (promo && discount && novelties) {
     var promo = document.querySelector('.promo');
-    var promoSlides = promo.querySelectorAll('.promo__slide');
-    var activePromoSlideIndex = [].indexOf.call(promoSlides, promo.querySelector('.promo__slide--active'));
     var novelties = document.querySelector('.novelties-of-week');
-    var noveltiesSlides = novelties.querySelectorAll('.novelties-of-week__slide');
-    var activeNoveltiesSlideIndex = [].indexOf.call(noveltiesSlides, novelties.querySelector('.novelties-of-week__slide--active'));
     var discount = document.querySelector('.discount');
-    var discountSlides = discount.querySelectorAll('.discount__slide');
-    var activeDiscountSlideIndex = [].indexOf.call(discountSlides, discount.querySelector('.discount__slide--active'));
-    var dots = null;
-    var dotsContainer = promo.querySelector('.slider__dots');
-    var btnPromoPrev = promo.querySelector('.promo__btn--prev');
-    var btnPromoNext = promo.querySelector('.promo__btn--next');
-    var btnNoveltiesPrev = novelties.querySelector('.novelties-of-week__btn--prev');
-    var btnNoveltiesNext = novelties.querySelector('.novelties-of-week__btn--next');
-    var btnDiscountPrev = discount.querySelector('.discount__btn--prev');
-    var btnDiscountNext = discount.querySelector('.discount__btn--next');
-    var PREV = 'prev';
-    var NEXT = 'next';
+
+    if (promo && discount && novelties) {
+      var promoSlides = promo.querySelectorAll('.promo__slide');
+      var activePromoSlideIndex = [].indexOf.call(promoSlides, promo.querySelector('.promo__slide--active'));
+      var noveltiesSlides = novelties.querySelectorAll('.novelties-of-week__slide');
+      var activeNoveltiesSlideIndex = [].indexOf.call(noveltiesSlides, novelties.querySelector('.novelties-of-week__slide--active'));
+      var discountSlides = discount.querySelectorAll('.discount__slide');
+      var activeDiscountSlideIndex = [].indexOf.call(discountSlides, discount.querySelector('.discount__slide--active'));
+      var dots = null;
+      var dotsContainer = promo.querySelector('.slider__dots');
+      var btnPromoPrev = promo.querySelector('.promo__btn--prev');
+      var btnPromoNext = promo.querySelector('.promo__btn--next');
+      var btnNoveltiesPrev = novelties.querySelector('.novelties-of-week__btn--prev');
+      var btnNoveltiesNext = novelties.querySelector('.novelties-of-week__btn--next');
+      var btnDiscountPrev = discount.querySelector('.discount__btn--prev');
+      var btnDiscountNext = discount.querySelector('.discount__btn--next');
+      var PREV = 'prev';
+      var NEXT = 'next';
 
     var renderDots = function () {
       var dot = null;
