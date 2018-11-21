@@ -1,10 +1,10 @@
 'use strict';
 
 window.navigation = (function () {
-  var MOBILE_WIDTH_MAX = 999;
+  var MOBILE_WIDTH_MAX = 1099;
 
-  var phoneList = document.querySelector('.page-header__phones');
-  var userList = document.querySelector('.page-header__user');
+  var phoneList = document.querySelector('.phone-list');
+  var userList = document.querySelector('.user-list');
   var siteList = document.querySelector('.site-list');
   var phoneToggle = document.querySelector('.page-header__toggle--phone');
   var userToggle = document.querySelector('.page-header__toggle--user');
@@ -15,11 +15,11 @@ window.navigation = (function () {
   };
 
   var isUserListActive = function () {
-    return userList.classList.contains('page-header__user--active');
+    return userList.classList.contains('user-list--active');
   };
 
   var isPhoneListActive = function () {
-    return phoneList.classList.contains('page-header__phones--active');
+    return phoneList.classList.contains('phone-list--active');
   };
 
   var isSiteListActive = function () {
@@ -37,22 +37,22 @@ window.navigation = (function () {
   };
 
   var showPhoneList = function () {
-    phoneList.classList.add('page-header__phones--active');
+    phoneList.classList.add('phone-list--active');
     window.addEventListener('resize', resizeWindowHandler);
   };
 
   var hidePhoneList = function () {
-    phoneList.classList.remove('page-header__phones--active');
+    phoneList.classList.remove('phone-list--active');
     window.removeEventListener('resize', resizeWindowHandler);
   };
 
   var showUserList = function () {
-    userList.classList.add('page-header__user--active');
+    userList.classList.add('user-list--active');
     window.addEventListener('resize', resizeWindowHandler);
   };
 
   var hideUserList = function () {
-    userList.classList.remove('page-header__user--active');
+    userList.classList.remove('user-list--active');
     window.removeEventListener('resize', resizeWindowHandler);
   };
 
@@ -61,8 +61,8 @@ window.navigation = (function () {
       hideSiteList();
     } else {
       showSiteList();
-      siteList.classList.remove('page-header__phones--active');
-      userList.classList.remove('page-header__user--active');
+      siteList.classList.remove('phone-list--active');
+      userList.classList.remove('user-list--active');
     }
   };
 
@@ -71,7 +71,7 @@ window.navigation = (function () {
       hideUserList();
     } else {
       showUserList();
-      phoneList.classList.remove('page-header__phones--active');
+      phoneList.classList.remove('phone-list--active');
       siteList.classList.remove('site-list--active');
     }
   };
@@ -81,7 +81,7 @@ window.navigation = (function () {
       hidePhoneList();
     } else {
       showPhoneList();
-      userList.classList.remove('page-header__user--active');
+      userList.classList.remove('user-list--active');
       siteList.classList.remove('site-list--active');
     }
   };

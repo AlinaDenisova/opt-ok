@@ -2,7 +2,22 @@
 
 window.catalogNav = (function () {
     var catalogNav = document.querySelector('.catalog-nav');
-    if (catalogNav) {
+    var catalogMainToggle = document.querySelector('.catalog-nav__main-toggle');
+    var catalogWrapper = document.querySelector('.catalog-nav__wrapper');
+    var MOBILE_WIDTH_MAX = 1099;
+
+    if (catalogWrapper) {
+
+      catalogMainToggle.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        if (catalogWrapper.classList.contains("catalog-nav__wrapper--active")) {
+          catalogWrapper.classList.remove("catalog-nav__wrapper--active");
+          catalogMainToggle.classList.remove("catalog-nav__main-toggle--active");
+        } else {
+          catalogWrapper.classList.add("catalog-nav__wrapper--active");
+          catalogMainToggle.classList.add("catalog-nav__main-toggle--active");
+        }
+      });
 
     var dropdownItem = function (item) {
       var openedItems = document.querySelectorAll('.catalog-nav__toggle--active');

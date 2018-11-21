@@ -3,8 +3,9 @@
   margin-bottom: 30px;
 }
 
-.catalog-nav__container {
-  @include container;
+.catalog-nav__wrapper {
+  position: relative;
+
 }
 
 .catalog-nav__list {
@@ -13,6 +14,7 @@
   background-color: #e2e6ea;
   padding-top: 25px;
   padding-bottom: 15px;
+  display: none;
 
   &:last-child {
     padding-top: 15px;
@@ -43,7 +45,8 @@
   padding: 0 10px;
 }
 
-.catalog-nav__toggle {
+.catalog-nav__toggle,
+.catalog-nav__main-toggle {
   border: none;
   padding: 0;
   width: 25px;
@@ -124,7 +127,7 @@
   display: none;
 }
 
-
+.catalog-nav__wrapper--active .catalog-nav__list,
 .catalog-nav__toggle--active ~ .sub-nav {
   display: block;
 }
@@ -144,6 +147,15 @@
 }
 
 @media (min-width: $desktop-width) {
+  .catalog-nav__title,
+  .catalog-nav__main-toggle {
+    display: none;
+  }
+
+  .catalog-nav__list {
+    display: block;
+  }
+
   .catalog-nav__item {
     &::before {
       width: 186px;
