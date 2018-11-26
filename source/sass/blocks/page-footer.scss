@@ -58,7 +58,7 @@
   line-height: 24px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 1px
+  margin-bottom: 10px
 }
 
 .page-footer__field {
@@ -78,11 +78,11 @@
 .page-footer__btn {
   background-image: none;
   display: inline-block;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .page-footer__payment {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   display: flex;
   align-items: flex-start;
 }
@@ -92,6 +92,10 @@
   display: flex;
   align-items: flex-start;
   margin-right: 25px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 

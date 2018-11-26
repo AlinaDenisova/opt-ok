@@ -1,0 +1,27 @@
+.recommended-products__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $dark-gray;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.recommended-products__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.recommended-products__item {
+  width: 203px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: $desktop-width) {
+  .recommended-products__list {
+    justify-content: space-between;
+  }
+}

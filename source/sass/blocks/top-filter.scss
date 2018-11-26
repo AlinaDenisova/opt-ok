@@ -2,9 +2,9 @@
   display: flex;
   justify-content: space-between;
   padding: 0 5px;
-  padding-top: 35px;
+  padding-top: 40px;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .top-filter__form {
@@ -141,7 +141,7 @@
  .top-filter {
   justify-content: flex-start;
   padding: 0;
-  padding-top: 35px;
+  padding-top: 40px;
  }
 
  .top-filter__item-wrapper {
@@ -191,6 +191,7 @@
     margin-right: 15px;
 
     &:first-of-type {
+      margin-bottom: 0;
       margin-right: 0;
       display: flex;
       width: 110px;

@@ -1,6 +1,6 @@
 'use strict';
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function() {
     $('.quantity > button').on('click', function() {
     var input = $(this).closest('.quantity').find('input');
     var value = parseInt(input.val()) || 0;
