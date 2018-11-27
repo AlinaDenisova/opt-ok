@@ -109,6 +109,12 @@
     border-radius: 3px;
     background-color: transparent;
   }
+
+  &:hover::before,
+  &:focus::before,
+  &:active::before {
+    border: 1px solid $red;
+  }
 }
 
 .catalog-nav__link {

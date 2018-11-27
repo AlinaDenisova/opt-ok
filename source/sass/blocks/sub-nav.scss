@@ -10,11 +10,6 @@
   line-height: 24px;
   color: $dark-gray;
   background-color: #f2f6fa;
-
-  &:hover {
-    color: $red;
-    text-decoration: underline;
-  }
 }
 
 .sub-nav__label {
@@ -47,4 +42,11 @@
 .sub-nav__link {
   color: inherit;
   text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $red;
+    text-decoration: underline;
+  }
 }

@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/DINPro.woff2" as="font" crossorigin="">
     <link rel="preload" href="fonts/DINPro-Bold.woff2" as="font" crossorigin="">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
   </head>
   <body class="no-js">
     <div style="display:none">
@@ -296,30 +297,25 @@
                         <input class="visually-hidden catalog-nav__input" id="gifts-souvenirs" type="checkbox" name="gifts-souvenirs">
                         <label class="catalog-nav__label" for="gifts-souvenirs"><a class="catalog-nav__link" href="#">Подарки и сувениры</a></label>
                       </li>
-                      <li class="catalog-nav__item catalog-nav__item--dropdown">
-                        <button class="catalog-nav__toggle" type="button">
-                          <span class="visually-hidden">Раскрыть раздел</span>
-                        </button>
+                      <li class="catalog-nav__item">
                         <input class="visually-hidden catalog-nav__input" id="accessories" type="checkbox" name="accessories">
-                        <label class="catalog-nav__label catalog-nav__label--dropdown" for="accessories"><a class="catalog-nav__link" href="#">Аксессуары</a></label>
-                        <ul class="catalog-nav__item-list sub-nav">
-                          <li class="sub-nav__item">
-                            <input class="visually-hidden catalog-nav__input" id="keychains" type="checkbox" name="keychains">
-                            <label class="sub-nav__label" for="keychains"><a class="sub-nav__link" href="#">Брелки</a></label>
-                          </li>
-                          <li class="sub-nav__item">
-                            <input class="visually-hidden catalog-nav__input" id="lanyards" type="checkbox" name="lanyards">
-                            <label class="sub-nav__label" for="lanyards"><a class="sub-nav__link" href="#">Темляки</a></label>
-                          </li>
-                          <li class="sub-nav__item">
-                            <input class="visually-hidden catalog-nav__input" id="bracelets" type="checkbox" name="bracelets">
-                            <label class="sub-nav__label" for="bracelets"><a class="sub-nav__link" href="#">Браслеты</a></label>
-                          </li>
-                          <li class="sub-nav__item">
-                            <input class="visually-hidden catalog-nav__input" id="carabiners" type="checkbox" name="carabiners">
-                            <label class="sub-nav__label" for="carabiners"><a class="sub-nav__link" href="#">Карабины</a></label>
-                          </li>
-                        </ul>
+                        <label class="catalog-nav__label" for="accessories"><a class="catalog-nav__link" href="#">Аксессуары</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="keychains" type="checkbox" name="keychains">
+                        <label class="catalog-nav__label" for="keychains"><a class="catalog-nav__link" href="#">Брелки</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="lanyards" type="checkbox" name="lanyards">
+                        <label class="catalog-nav__label" for="lanyards"><a class="catalog-nav__link" href="#">Темляки</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="bracelets" type="checkbox" name="bracelets">
+                        <label class="catalog-nav__label" for="bracelets"><a class="catalog-nav__link" href="#">Браслеты</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="carabiners" type="checkbox" name="carabiners">
+                        <label class="catalog-nav__label" for="carabiners"><a class="catalog-nav__link" href="#">Карабины</a></label>
                       </li>
                       <li class="catalog-nav__item">
                         <input class="visually-hidden catalog-nav__input" id="other" type="checkbox" name="other">
@@ -346,6 +342,153 @@
                       </li>
                     </ul>
                   </div>
+                </section>
+
+                <section class="filter-left">
+                  <div class="filter-left__wrapper">
+                    <h2 class="filter-left__title">Фильтр</h2>
+                    <button class="filter-left__main-toggle" type="button">
+                      <span class="visually-hidden">Раскрыть раздел</span>
+                    </button>
+                    <form class="filter-left__form">
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title filter-left__group-title--active"><span>Бренды</span></h3>
+                      <div class="filter-left__inputs filter-left__inputs--brands">
+                        <div class="filter-left__input-wrapper">
+                          <input class="visually-hidden filter-left__input" id="filter-left-noks" type="checkbox" name="filter-left-noks">
+                          <label class="filter-left__label" for="filter-left-noks">Нокс</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-vityaz" type="checkbox" name="filter-left-vityaz">
+                          <label class="filter-left__label" for="filter-left-vityaz">Витязь</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-kizlyar" type="checkbox" name="filter-left-kizlyar">
+                          <label class="filter-left__label" for="filter-left-kizlyar">Кизляр</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-vn-pro" type="checkbox" name="filter-left-vn-pro">
+                          <label class="filter-left__label" for="filter-left-vn-pro">VN Pro</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-viking-nordway" type="checkbox" name="filter-left-viking-nordway">
+                          <label class="filter-left__label" for="filter-left-viking-nordway">Viking Nordway</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-master-klinok" type="checkbox" name="filter-left-master-klinok">
+                          <label class="filter-left__label" for="filter-left-master-klinok">Мастер Клинок</label>
+                        </div>
+                        <div class="filter-left__input-wrapper">
+                          <input class="visually-hidden filter-left__input" id="filter-left-vorsma" type="checkbox" name="filter-left-vorsma">
+                          <label class="filter-left__label" for="filter-left-vorsma">Ворсма</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-masterskaya-kuznetsova" type="checkbox" name="filter-left-masterskaya-kuznetsova">
+                          <label class="filter-left__label" for="filter-left-masterskaya-kuznetsova">Мастерская Кузнецова</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-medved" type="checkbox" name="filter-left-medved">
+                          <label class="filter-left__label" for="filter-left-medved">Медведь</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-ros-oruzhiye" type="checkbox" name="filter-left-ros-oruzhiye">
+                          <label class="filter-left__label" for="filter-left-ros-oruzhiye">РосОружие</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-traveler" type="checkbox" name="filter-left-traveler">
+                          <label class="filter-left__label" for="filter-left-traveler">Traveler</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-with-armour" type="checkbox" name="filter-left-with-armour">
+                          <label class="filter-left__label" for="filter-left-with-armour">WithArmour</label>
+                        </div>
+                        <a class="filter-left__link">Показать еще</a>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title filter-left__group-title--active">Цена</h3>
+                      <div class="filter-left__inputs">
+                        <div class="filter-left__range-control">
+                          <label class="filter-left__length-label" for="filter-left-price-min">От</label>
+                          <input type="number" min=0 max="9900" oninput="validity.valid||(value='0');" id="filter-left-price-min" class="filter-left__length-field">
+                          <label class="filter-left__length-label" for="filter-left-price-max">до</label>
+                          <input type="number" min=0 max="10000" oninput="validity.valid||(value='10000');" id="filter-left-price-max" class="filter-left__length-field">
+                        </div>
+                        <div id="filter-left-price-range" class="filter-left__range-input" name="rangeInput">
+                          <span class="filter-left__length-value filter-left__length-value--min">0</span>
+                          <span class="filter-left__length-value filter-left__length-value--max">10000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title"><span>Тип</span></h3>
+                      <div class="filter-left__inputs">
+                        <div class="filter-left__input-wrapper">
+                          <input class="visually-hidden filter-left__input" name="filter-left-butterfly" type="checkbox" id="filter-left-butterfly">
+                          <label class="filter-left__label" for="filter-left-butterfly">Бабочка</label>
+                          <input class="visually-hidden filter-left__input" name="filter-left-ax" type="checkbox" id="filter-left-ax">
+                          <label class="filter-left__label" for="filter-left-ax">Топор</label>
+                          <input class="visually-hidden filter-left__input" name="filter-left-for-survival" type="checkbox" id="filter-left-for-survival">
+                          <label class="filter-left__label" for="filter-left-for-survival">Для выживания</label>
+                          <input class="visually-hidden filter-left__input" name="filter-left-propelling" type="checkbox" id="filter-left-propelling">
+                          <label class="filter-left__label" for="filter-left-propelling">Метательный</label>
+                        </div>
+                        <div class="filter-left__input-wrapper">
+                          <input class="visually-hidden filter-left__input" id="filter-left-karambit" type="checkbox" name="filter-left-karambit">
+                          <label class="filter-left__label" for="filter-left-karambit">Керамбит</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-tactical-pencil" type="checkbox" name="filter-left-tactical-pencil">
+                          <label class="filter-left__label" for="filter-left-tactical-pencil">Тактическая ручка</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-finca" type="checkbox" name="filter-left-finca">
+                          <label class="filter-left__label" for="filter-left-finca">Финка</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title"><span>Марка стали</span></h3>
+                      <div class="filter-left__inputs">
+                        <input class="visually-hidden filter-left__input" id="filter-left-steel-420" type="checkbox" name="filter-left-steel-420">
+                        <label class="filter-left__label" for="filter-left-steel-420">420</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-steel-440" type="checkbox" name="filter-left-steel-440">
+                        <label class="filter-left__label" for="filter-left-steel-440">440</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-steel-460" type="checkbox" name="filter-left-steel-460">
+                        <label class="filter-left__label" for="filter-left-steel-460">460</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-steel-480" type="checkbox" name="filter-left-steel-480">
+                        <label class="filter-left__label" for="filter-left-steel-480">480</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-steel-500" type="checkbox" name="filter-left-steel-500">
+                        <label class="filter-left__label" for="filter-left-steel-500">500</label>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title"><span>Твердость клинка</span></h3>
+                      <div class="filter-left__inputs">
+                        <input class="visually-hidden filter-left__input" id="filter-left-hardness-56-58" type="checkbox" name="filter-left-hardness-56-58">
+                        <label class="filter-left__label" for="filter-left-hardness-56-58">56-58</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-hardness-440" type="checkbox" name="filter-left-hardness-440">
+                        <label class="filter-left__label" for="filter-left-hardness-440">440</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-hardness-460" type="checkbox" name="filter-left-hardness-460">
+                        <label class="filter-left__label" for="filter-left-hardness-460">460</label>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title"><span>Длина клинка</span></h3>
+                      <div class="filter-left__inputs">
+                        <div class="filter-left__range-control">
+                          <label class="filter-left__length-label" for="filter-left-length-min">От</label>
+                          <input type="number" min=0 max="9900" oninput="validity.valid||(value='0');" id="filter-left-length-min" class="filter-left__length-field">
+                          <label class="filter-left__length-label" for="filter-left-length-max">до</label>
+                          <input type="number" min=0 max="10000" oninput="validity.valid||(value='10000');" id="filter-left-length-max" class="filter-left__length-field">
+                        </div>
+                        <div id="filter-left-length-range" class="filter-left__range-input" name="rangeInput">
+                          <span class="filter-left__length-value filter-left__length-value--min">0</span>
+                          <span class="filter-left__length-value filter-left__length-value--max">10000</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <div class="filter-left__input-wrapper">
+                        <h3 class="filter-left__group-title"><span>Рукоять</span></h3>
+                        <div class="filter-left__inputs">
+                          <input class="visually-hidden filter-left__input" id="filter-left-handle-440" type="checkbox" name="filter-left-handle-440">
+                          <label class="filter-left__label" for="filter-left-handle-440">440</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-handle-460" type="checkbox" name="filter-left-handle-460">
+                          <label class="filter-left__label" for="filter-left-handle-460">460</label>
+                          <input class="visually-hidden filter-left__input" id="filter-left-handle-480" type="checkbox" name="filter-left-handle-480">
+                          <label class="filter-left__label" for="filter-left-handle-480">480</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-left__group">
+                      <h3 class="filter-left__group-title"><span>Чехол</span></h3>
+                      <div class="filter-left__inputs">
+                        <input class="visually-hidden filter-left__input" id="filter-left-case-440" type="checkbox" name="filter-left-case-440">
+                        <label class="filter-left__label" for="filter-left-case-440">440</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-case-460" type="checkbox" name="filter-left-case-460">
+                        <label class="filter-left__label" for="filter-left-case-460">460</label>
+                        <input class="visually-hidden filter-left__input" id="filter-left-case-480" type="checkbox" name="filter-left-case-480">
+                        <label class="filter-left__label" for="filter-left-case-480">480</label>
+                      </div>
+                    </div>
+                  </form>
                 </section>
               </div>
 
@@ -1126,7 +1269,7 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/picturefill.js"></script>
     <script src="js/all.js"></script>
   </body>

@@ -158,6 +158,55 @@ window.catalogNav = (function () {
 
 'use strict';
 
+window.filterLeft = (function () {
+    var filterLeft = document.querySelector('.filter-left');
+    var filterLeftToggle = document.querySelector('.filter-left__main-toggle');
+    var filterLeftForm = document.querySelector('.filter-left__form');
+    var MOBILE_WIDTH_MAX = 1099;
+
+    if (filterLeftForm) {
+
+      filterLeftToggle.addEventListener("click", function(evt) {
+        evt.preventDefault();
+        if (filterLeftForm.classList.contains("filter-left__form--active")) {
+          filterLeftForm.classList.remove("filter-left__form--active");
+          filterLeftToggle.classList.remove("filter-left__main-toggle--active");
+        } else {
+          filterLeftForm.classList.add("filter-left__form--active");
+          filterLeftToggle.classList.add("filter-left__main-toggle--active");
+        }
+      });
+
+    var dropdownItem = function (item) {
+      var openedItems = document.querySelectorAll('.filter-left__group-title--active');
+      [].forEach.call(openedItems, function (openedItem) {
+        openedItem !== item && openedItem.classList.remove('filter-left__group-title--active');
+      });
+      if (item.classList.contains('filter-left__group-title--active')) {
+        item.classList.remove('filter-left__group-title--active');
+      } else {
+        item.classList.add('filter-left__group-title--active');
+      }
+    };
+
+    //выбор выпадающего списка
+    var dropdownItemHandler = function (evt) {
+      var target = evt.target;
+        while (target !== filterLeft) {
+          if (target.classList.contains('filter-left__group-title')) {
+            dropdownItem(target);
+            break;
+          }
+          target = target.parentNode;
+        }
+    };
+
+    filterLeft.addEventListener('click', dropdownItemHandler);
+  }
+})();
+
+'use strict';
+
 (function () {
     var promo = document.querySelector('.promo');
     var novelties = document.querySelector('.novelties-of-week');
@@ -468,32 +517,22 @@ $(function() {
 $(document).ready(function(){
 
   $("#filter-length-min,#filter-length-max").on('change', function () {
-
     var min_price_range = parseInt($("#filter-length-min").val());
-
     var max_price_range = parseInt($("#filter-length-max").val());
 
     if (min_price_range > max_price_range) {
     $('#filter-length-max').val(min_price_range);
     }
-
     $("filters-length-range").slider({
     values: [min_price_range, max_price_range]
     });
-
   });
 
-
   $("#filter-length-min,#filter-length-max").on("paste keyup", function () {
-
     var min_price_range = parseInt($("#filter-length-min").val());
-
     var max_price_range = parseInt($("#filter-length-max").val());
-
     if(min_price_range == max_price_range){
-
       max_price_range = min_price_range + 100;
-
       $("#filter-length-min").val(min_price_range);
       $("#filter-length-max").val(max_price_range);
     }
@@ -501,7 +540,6 @@ $(document).ready(function(){
     $("#filters-length-range").slider({
     values: [min_price_range, max_price_range]
     });
-
   });
 
 
@@ -518,7 +556,6 @@ $(document).ready(function(){
       if (ui.values[0] == ui.values[1]) {
         return false;
       }
-
       $("#filter-length-min").val(ui.values[0]);
       $("#filter-length-max").val(ui.values[1]);
     }
@@ -526,14 +563,120 @@ $(document).ready(function(){
 
     $("#filter-length-min").val($("#filters-length-range").slider("values", 0));
     $("#filter-length-max").val($("#filters-length-range").slider("values", 1));
-
   });
 
-  $("#filters-length-range").click(function () {
-    var min_price = $('#filter-length-min').val();
-    var max_price = $('#filter-length-max').val();
+  $("#filter-left-price-range").click(function () {
+    var min_price = $('#filter-left-price-min').val();
+    var max_price = $('#filter-left-price-max').val();
   });
 
+  $("#filter-left-price-min,#filter-left-price-max").on('change', function () {
+
+    var min_price_range = parseInt($("#filter-left-price-min").val());
+    var max_price_range = parseInt($("#filter-left-price-max").val());
+    if (min_price_range > max_price_range) {
+    $('#filter-left-price-max').val(min_price_range);
+    }
+    $("filter-left-price-range").slider({
+    values: [min_price_range, max_price_range]
+    });
+  });
+
+  $("#filter-left-price-min,#filter-left-price-max").on("paste keyup", function () {
+
+    var min_price_range = parseInt($("#filter-left-price-min").val());
+    var max_price_range = parseInt($("#filter-left-price-max").val());
+    if(min_price_range == max_price_range){
+      max_price_range = min_price_range + 100;
+      $("#filter-left-price-min").val(min_price_range);
+      $("#filter-left-price-max").val(max_price_range);
+    }
+
+    $("#filter-left-price-range").slider({
+    values: [min_price_range, max_price_range]
+    });
+  });
+
+  $(function () {
+    $("#filter-left-price-range").slider({
+    range: true,
+    orientation: "horizontal",
+    min: 0,
+    max: 10000,
+    values: [4000, 7000],
+    step: 100,
+
+    slide: function (event, ui) {
+      if (ui.values[0] == ui.values[1]) {
+        return false;
+      }
+      $("#filter-left-price-min").val(ui.values[0]);
+      $("#filter-left-price-max").val(ui.values[1]);
+    }
+    });
+
+    $("#filter-left-price-min").val($("#filter-left-price-range").slider("values", 0));
+    $("#filter-left-price-max").val($("#filter-left-price-range").slider("values", 1));
+  });
+
+  $("#filter-left-price-range").click(function () {
+    var min_price = $('#filter-left-price-min').val();
+    var max_price = $('#filter-left-price-max').val();
+  });
+
+  $("#filter-left-price-min,#filter-left-price-max").on('change', function () {
+
+    var min_price_range = parseInt($("#filter-left-price-min").val());
+    var max_price_range = parseInt($("#filter-left-price-max").val());
+    if (min_price_range > max_price_range) {
+    $('#filter-left-price-max').val(min_price_range);
+    }
+    $("filter-left-price-range").slider({
+    values: [min_price_range, max_price_range]
+    });
+  });
+
+  $("#filter-left-length-min,#filter-left-length-max").on("paste keyup", function () {
+
+    var min_price_range = parseInt($("#filter-left-length-min").val());
+    var max_price_range = parseInt($("#filter-left-length-max").val());
+    if(min_price_range == max_price_range){
+      max_price_range = min_price_range + 100;
+      $("#filter-left-length-min").val(min_price_range);
+      $("#filter-left-length-max").val(max_price_range);
+    }
+
+    $("#filter-left-length-range").slider({
+    values: [min_price_range, max_price_range]
+    });
+  });
+
+  $(function () {
+    $("#filter-left-length-range").slider({
+    range: true,
+    orientation: "horizontal",
+    min: 0,
+    max: 10000,
+    values: [4000, 7000],
+    step: 100,
+
+    slide: function (event, ui) {
+      if (ui.values[0] == ui.values[1]) {
+        return false;
+      }
+      $("#filter-left-length-min").val(ui.values[0]);
+      $("#filter-left-length-max").val(ui.values[1]);
+    }
+    });
+
+    $("#filter-left-length-min").val($("#filter-left-length-range").slider("values", 0));
+    $("#filter-left-length-max").val($("#filter-left-length-range").slider("values", 1));
+  });
+
+  $("#filter-left-length-range").click(function () {
+    var min_price = $('#filter-left-length-min').val();
+    var max_price = $('#filter-left-length-max').val();
+  });
 });
 
 //# sourceMappingURL=all.js.map
