@@ -10,6 +10,7 @@
     <link rel="preload" href="fonts/DINPro.woff2" as="font" crossorigin="">
     <link rel="preload" href="fonts/DINPro-Bold.woff2" as="font" crossorigin="">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
   </head>
   <body class="no-js">
     <div style="display:none">
@@ -115,7 +116,7 @@
             <li class="site-list__item">
               <a class="site-list__link" href="index.html">Главная</a>
             </li>
-            <li class="site-list__item site-list__item--active">
+            <li class="site-list__item">
               <a class="site-list__link" href="catalog-table.html">Каталог</a>
             </li>
             <li class="site-list__item">
@@ -149,200 +150,281 @@
       <main class="page-main">
         <div class="page-main__container page-main__container--column">
           <div class="page-main__wrapper-column">
-            <section class="top-filter">
-              <form class="top-filter__form" method="post" action="#">
-                <div class="top-filter__item-wrapper">
-                  <label class="visually-hidden" for="catalog-search">Поиск по сайту</label>
-                  <input class="top-filter__search-field" id="catalog-search" type="search" name="catalog-search" placeholder="Поиск по каталогу">
+            <section class="filters">
+              <h1 class="filters__title">Подбор по параметрам</h1>
+              <form class="filters__form">
+                <div class="filters__group filters__group--row filters__group--new">
+                  <input class="visually-hidden filters__input" id="filter-new" type="checkbox" name="filter-new">
+                  <label class="filters__label" for="filter-new">Новинка</label>
+                  <input class="visually-hidden filters__input" id="filter-hit" type="checkbox" name="filter-hit">
+                  <label class="filters__label" for="filter-hit">Хит продаж</label>
+                  <input class="visually-hidden filters__input" id="filter-sale" type="checkbox" name="filter-sale">
+                  <label class="filters__label" for="filter-sale">Акция</label>
+                  <input class="visually-hidden filters__input" id="filter-recommend" type="checkbox" name="filter-recommend">
+                  <label class="filters__label" for="filter-recommend">Рекомендуем</label>
                 </div>
-                <div class="top-filter__item-wrapper">
-                  <legend class="top-filter__item-title">Цена</legend>
-                  <label class="top-filter__label" for="min-price">От</label>
-                  <input class="top-filter__field-price" type="number" id="min-price" name="min-price" min="1">
-                  <label class="top-filter__label" for="max-price">до</label>
-                  <input class="top-filter__field-price" type="number" id="max-price" name="max-price">
+                <div class="filters__group filters__group--brands">
+                  <h3 class="filters__group-title">Бренды</h3>
+                  <div class="filters__inputs">
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-noks" type="checkbox" name="filter-noks">
+                      <label class="filters__label" for="filter-noks">Нокс</label>
+                      <input class="visually-hidden filters__input" id="filter-vityaz" type="checkbox" name="filter-vityaz">
+                      <label class="filters__label" for="filter-vityaz">Витязь</label>
+                      <input class="visually-hidden filters__input" id="filter-kizlyar" type="checkbox" name="filter-kizlyar">
+                      <label class="filters__label" for="filter-kizlyar">Кизляр</label>
+                      <input class="visually-hidden filters__input" id="filter-vn-pro" type="checkbox" name="filter-vn-pro">
+                      <label class="filters__label" for="filter-vn-pro">VN Pro</label>
+                      <input class="visually-hidden filters__input" id="filter-viking-nordway" type="checkbox" name="filter-viking-nordway">
+                      <label class="filters__label" for="filter-viking-nordway">Viking Nordway</label>
+                      <input class="visually-hidden filters__input" id="filter-master-klinok" type="checkbox" name="filter-master-klinok">
+                      <label class="filters__label" for="filter-master-klinok">Мастер Клинок</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-vorsma" type="checkbox" name="filter-vorsma">
+                      <label class="filters__label" for="filter-vorsma">Ворсма</label>
+                      <input class="visually-hidden filters__input" id="filter-masterskaya-kuznetsova" type="checkbox" name="filter-masterskaya-kuznetsova">
+                      <label class="filters__label" for="filter-masterskaya-kuznetsova">Мастерская Кузнецова</label>
+                      <input class="visually-hidden filters__input" id="filter-medved" type="checkbox" name="filter-medved">
+                      <label class="filters__label" for="filter-medved">Медведь</label>
+                      <input class="visually-hidden filters__input" id="filter-ros-oruzhiye" type="checkbox" name="filter-ros-oruzhiye">
+                      <label class="filters__label" for="filter-ros-oruzhiye">РосОружие</label>
+                      <input class="visually-hidden filters__input" id="filter-traveler" type="checkbox" name="filter-traveler">
+                      <label class="filters__label" for="filter-traveler">Traveler</label>
+                      <input class="visually-hidden filters__input" id="filter-with-armour" type="checkbox" name="filter-with-armour">
+                      <label class="filters__label" for="filter-with-armour">WithArmour</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-noks" type="checkbox" name="filter-noks">
+                      <label class="filters__label" for="filter-noks">Нокс</label>
+                      <input class="visually-hidden filters__input" id="filter-vityaz" type="checkbox" name="filter-vityaz">
+                      <label class="filters__label" for="filter-vityaz">Витязь</label>
+                      <input class="visually-hidden filters__input" id="filter-kizlyar" type="checkbox" name="filter-kizlyar">
+                      <label class="filters__label" for="filter-kizlyar">Кизляр</label>
+                      <input class="visually-hidden filters__input" id="filter-vn-pro" type="checkbox" name="filter-vn-pro">
+                      <label class="filters__label" for="filter-vn-pro">VN Pro</label>
+                      <input class="visually-hidden filters__input" id="filter-viking-nordway" type="checkbox" name="filter-viking-nordway">
+                      <label class="filters__label" for="filter-viking-nordway">Viking Nordway</label>
+                      <input class="visually-hidden filters__input" id="filter-master-klinok" type="checkbox" name="filter-master-klinok">
+                      <label class="filters__label" for="filter-master-klinok">Мастер Клинок</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-vorsma" type="checkbox" name="filter-vorsma">
+                      <label class="filters__label" for="filter-vorsma">Ворсма</label>
+                      <input class="visually-hidden filters__input" id="filter-masterskaya-kuznetsova" type="checkbox" name="filter-masterskaya-kuznetsova">
+                      <label class="filters__label" for="filter-masterskaya-kuznetsova">Мастерская Кузнецова</label>
+                      <input class="visually-hidden filters__input" id="filter-medved" type="checkbox" name="filter-medved">
+                      <label class="filters__label" for="filter-medved">Медведь</label>
+                      <input class="visually-hidden filters__input" id="filter-ros-oruzhiye" type="checkbox" name="filter-ros-oruzhiye">
+                      <label class="filters__label" for="filter-ros-oruzhiye">РосОружие</label>
+                      <input class="visually-hidden filters__input" id="filter-traveler" type="checkbox" name="filter-traveler">
+                      <label class="filters__label" for="filter-traveler">Traveler</label>
+                      <input class="visually-hidden filters__input" id="filter-with-armour" type="checkbox" name="filter-with-armour">
+                      <label class="filters__label" for="filter-with-armour">WithArmour</label>
+                    </div>
+                  </div>
                 </div>
-                <button class="visually-hidden" type="submit">Отправить</button>
+                <div class="filters__group">
+                  <h3 class="filters__group-title">Ножи</h3>
+                  <div class="filters__inputs">
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-fixed-blade-knives" type="checkbox" name="filter-fixed-blade-knives">
+                      <label class="filters__label" for="filter-fixed-blade-knives">Ножи с фиксированным клинком</label>
+                      <input class="visually-hidden filters__input" id="filter-tactical" type="checkbox" name="filter-tactical">
+                      <label class="filters__label" for="filter-tactical">Тактические</label>
+                      <input class="visually-hidden filters__input" id="filter-hunting/tourist" type="checkbox" name="filter-hunting/tourist">
+                      <label class="filters__label" for="filter-hunting/tourist">Охотничьи/туристические</label>
+                      <input class="visually-hidden filters__input" id="filter-urban-wear/auxiliary" type="checkbox" name="filter-urban-wear/auxiliary">
+                      <label class="filters__label" for="filter-urban-wear/auxiliary">Городского ношения/вспомогательные</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-souvenir" type="checkbox" name="filter-souvenir">
+                      <label class="filters__label" for="filter-souvenir">Сувенирные</label>
+                      <input class="visually-hidden filters__input" id="filter-sports" type="checkbox" name="filter-sports">
+                      <label class="filters__label" for="filter-sports">Спортивные</label>
+                      <input class="visually-hidden filters__input" id="filter-machete" type="checkbox" name="filter-machete">
+                      <label class="filters__label" for="filter-machete">Мачете</label>
+                      <input class="visually-hidden filters__input" id="filter-kitchen" type="checkbox" name="filter-kitchen">
+                      <label class="filters__label" for="filter-kitchen">Кухонные</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-folding-knives" type="checkbox" name="filter-folding-knives">
+                      <label class="filters__label" for="filter-folding-knives">Ножи складные</label>
+                      <input class="visually-hidden filters__input" id="filter-butterflies" type="checkbox" name="filter-butterflies">
+                      <label class="filters__label" for="filter-butterflies">Бабочки (балисонги)</label>
+                      <input class="visually-hidden filters__input" id="filter-mechanical" type="checkbox" name="filter-mechanical">
+                      <label class="filters__label" for="filter-mechanical">Механические</label>
+                      <input class="visually-hidden filters__input" id="filter-multifunctional" type="checkbox" name="filter-multifunctional">
+                      <label class="filters__label" for="filter-multifunctional">Многофункциональные</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-automatic" type="checkbox" name="filter-automatic">
+                      <label class="filters__label" for="filter-automatic">Автоматические</label>
+                      <input class="visually-hidden filters__input" id="filter-semi-automatic" type="checkbox" name="filter-semi-automatic">
+                      <label class="filters__label" for="filter-semi-automatic">Полуавтоматические</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters__group filters__group--other">
+                  <h3 class="filters__group-title">Другое</h3>
+                  <div class="filters__inputs">
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-axes-shovels" type="checkbox" name="filter-axes-shovels">
+                      <label class="filters__label" for="filter-axes-shovels">Топоры и лопаты</label>
+                      <input class="visually-hidden filters__input" id="filter-lanterns" type="checkbox" name="filter-lanterns">
+                      <label class="filters__label" for="filter-lanterns">Фонари</label>
+                      <input class="visually-hidden filters__input" id="filter-crossbows" type="checkbox" name="filter-crossbows">
+                      <label class="filters__label" for="filter-crossbows">Арбалеты</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-airguns-accessories" type="checkbox" name="filter-airguns-accessories">
+                      <label class="filters__label" for="filter-airguns-accessories">Пневматическое оружие и комплектующие к нему</label>
+                      <input class="visually-hidden filters__input" id="filter-slingshots-sarbakans" type="checkbox" name="filter-slingshots-sarbakans">
+                      <label class="filters__label" for="filter-slingshots-sarbakans">Рогатки и сарбаканы</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-tactical-pens" type="checkbox" name="filter-tactical-pens">
+                      <label class="filters__label" for="filter-tactical-pens">Ручки тактические</label>
+                      <input class="visually-hidden filters__input" id="filter-knife-care-products" type="checkbox" name="filter-knife-care-products">
+                      <label class="filters__label" for="filter-knife-care-products">Средства  ухода за ножами</label>
+                      <input class="visually-hidden filters__input" id="filter-cases-sheaths-holsters" type="checkbox" name="filter-cases-sheaths-holsters">
+                      <label class="filters__label" for="filter-cases-sheaths-holsters">Чехлы, ножны и кобуры</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-paracord" type="checkbox" name="filter-paracord">
+                      <label class="filters__label" for="filter-paracord">Паракорд</label>
+                      <input class="visually-hidden filters__input" id="filter-flasks-thermoses-dishes" type="checkbox" name="filter-flasks-thermoses-dishes">
+                      <label class="filters__label" for="filter-flasks-thermoses-dishes">Фляги, термосы, посуда</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters__group filters__group--row filters__group--lighters">
+                  <h3 class="filters__group-title">Зажигалки</h3>
+                  <input class="visually-hidden filters__input" name="filter-gas" type="checkbox" name="filter-gas">
+                  <label class="filters__label" for="filter-gas">Газовые</label>
+                  <input class="visually-hidden filters__input" name="filter-petrol" type="checkbox" name="filter-petrol">
+                  <label class="filters__label" for="filter-petrol">Бензиновые</label>
+                </div>
+                <div class="filters__group filters__group--gifts">
+                  <div class="filters__inputs">
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-gifts-souvenirs" type="checkbox" id="filter-gifts-souvenirs">
+                      <label class="filters__label" for="filter-gifts-souvenirs">Подарки и сувениры</label>
+                      <input class="visually-hidden filters__input" name="filter-accessories" type="checkbox" id="filter-accessories">
+                      <label class="filters__label" for="filter-accessories">Аксессуары</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-keychains" type="checkbox" id="filter-keychains">
+                      <label class="filters__label" for="filter-keychains">Брелки</label>
+                      <input class="visually-hidden filters__input" name="filter-lanyards" type="checkbox" id="filter-lanyards">
+                      <label class="filters__label" for="filter-lanyards">Темляки</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-bracelets" type="checkbox" id="filter-bracelets">
+                      <label class="filters__label" for="filter-bracelets">Браслеты</label>
+                      <input class="visually-hidden filters__input" name="filter-carabiners" type="checkbox" id="filter-carabiners">
+                      <label class="filters__label" for="filter-carabiners">Карабины</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-other" type="checkbox" id="filter-other">
+                      <label class="filters__label" for="filter-other">Прочее</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters__group filters__group--type">
+                  <h3 class="filters__group-title">По типу</h3>
+                  <div class="filters__inputs">
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-butterfly" type="checkbox" id="filter-butterfly">
+                      <label class="filters__label" for="filter-butterfly">Бабочка</label>
+                      <input class="visually-hidden filter__input" name="filter-ax" type="checkbox" id="filter-ax">
+                      <label class="filters__label" for="filter-ax">Топор</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" name="filter-for-survival" type="checkbox" id="filter-for-survival">
+                      <label class="filters__label" for="filter-for-survival">Для выживания</label>
+                      <input class="visually-hidden filters__input" name="filter-propelling" type="checkbox" id="filter-propelling">
+                      <label class="filters__label" for="filter-propelling">Метательный</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-karambit" type="checkbox" name="filter-karambit">
+                      <label class="filters__label" for="filter-karambit">Керамбит</label>
+                      <input class="visually-hidden filters__input" id="filter-tactical-pencil" type="checkbox" name="filter-tactical-pencil">
+                      <label class="filters__label" for="filter-tactical-pencil">Тактическая ручка</label>
+                    </div>
+                    <div class="filters__input-wrapper">
+                      <input class="visually-hidden filters__input" id="filter-finca" type="checkbox" name="filter-finca">
+                      <label class="filters__label" for="filter-finca">Финка</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filters__group filters__group--row filters__group--number">
+                  <div class="filters__input-wrapper">
+                    <h3 class="filters__group-title">Марка стали клинка</h3>
+                    <input class="visually-hidden filters__input" id="filter-steel-420" type="checkbox" name="filter-steel-420">
+                    <label class="filters__label" for="filter-steel-420">420</label>
+                    <input class="visually-hidden filters__input" id="filter-steel-440" type="checkbox" name="filter-steel-440">
+                    <label class="filters__label" for="filter-steel-440">440</label>
+                    <input class="visually-hidden filters__input" id="filter-steel-460" type="checkbox" name="filter-steel-460">
+                    <label class="filters__label" for="filter-steel-460">460</label>
+                    <input class="visually-hidden filters__input" id="filter-steel-480" type="checkbox" name="filter-steel-480">
+                    <label class="filters__label" for="filter-steel-480">480</label>
+                    <input class="visually-hidden filters__input" id="filter-steel-500" type="checkbox" name="filter-steel-500">
+                    <label class="filters__label" for="filter-steel-500">500</label>
+                  </div>
+
+                  <div class="filters__input-wrapper">
+                    <h3 class="filters__group-title">Твердость клинка</h3>
+                    <input class="visually-hidden filters__input" id="filter-hardness-56-58" type="checkbox" name="filter-hardness-56-58">
+                    <label class="filters__label" for="filter-hardness-56-58">56-58</label>
+                    <input class="visually-hidden filters__input" id="filter-hardness-440" type="checkbox" name="filter-hardness-440">
+                    <label class="filters__label" for="filter-hardness-440">440</label>
+                    <input class="visually-hidden filters__input" id="filter-hardness-460" type="checkbox" name="filter-hardness-460">
+                    <label class="filters__label" for="filter-hardness-460">460</label>
+                  </div>
+
+                  <div class="filters__input-wrapper">
+                    <h3 class="filters__group-title">Рукоять</h3>
+                    <input class="visually-hidden filters__input" id="filter-handle-440" type="checkbox" name="filter-handle-440">
+                    <label class="filters__label" for="filter-handle-440">440</label>
+                    <input class="visually-hidden filters__input" id="filter-handle-460" type="checkbox" name="filter-handle-460">
+                    <label class="filters__label" for="filter-handle-460">460</label>
+                    <input class="visually-hidden filters__input" id="filter-handle-480" type="checkbox" name="filter-handle-480">
+                    <label class="filters__label" for="filter-handle-480">480</label>
+                  </div>
+
+                  <div class="filters__input-wrapper">
+                    <h3 class="filters__group-title">Чехол</h3>
+                    <input class="visually-hidden filters__input" id="filter-case-440" type="checkbox" name="filter-case-440">
+                    <label class="filters__label" for="filter-case-440">440</label>
+                    <input class="visually-hidden filters__input" id="filter-case-460" type="checkbox" name="filter-case-460">
+                    <label class="filters__label" for="filter-case-460">460</label>
+                    <input class="visually-hidden filters__input" id="filter-case-480" type="checkbox" name="filter-case-480">
+                    <label class="filters__label" for="filter-case-480">480</label>
+                  </div>
+                </div>
+
+                <div class="filters__group filters__group--row filters__group--range">
+                  <h3 class="filters__group-title">Длина клинка</h3>
+                  <div class="filters__range-control">
+                    <label class="filters__length-label" for="filter-length-min">От</label>
+                    <input type="number" min=0 max="9900" oninput="validity.valid||(value='0');" id="filter-length-min" class="filters__length-field">
+                    <label class="filters__length-label" for="filter-length-max">до</label>
+                    <input type="number" min=0 max="10000" oninput="validity.valid||(value='10000');" id="filter-length-max" class="filters__length-field">
+                  </div>
+                  <div id="filters-length-range" class="filters__range-input" name="rangeInput">
+                    <span class="filters__length-value filters__length-value--min">0</span>
+                    <span class="filters__length-value filters__length-value--max">10000</span>
+                  </div>
+                </div>
+                <button class="btn filters__btn">Искать</button>
               </form>
-              <a class="top-filter__link" href="#">Подбор по параметрам</a>
-              <a class="top-filter__link" href="#" download="">Скачать Excel</a>
-              <a class="top-filter__link" href="#">Мои прошлые заказы</a>
-              <ul class="top-filter__view-list">
-                <li class="top-filter__view-item top-filter__view-item--active">
-                  <a class="top-filter__view-link">
-                    <svg class="top-filter__icon" width="20" height="13">
-                      <use xlink:href="#icon-table"></use>
-                    </svg>
-                  </a>
-                </li>
-                </li>
-                <li class="top-filter__view-item">
-                  <a class="top-filter__view-link">
-                    <svg class="top-filter__icon" width="18" height="13">
-                      <use xlink:href="#icon-plate"></use>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-              <div class="top-filter__quantity">
-                <span class="top-filter__quantity-text">Показывать на странице</span>
-                <ul class="top-filter__quantity-list">
-                  <li>
-                    <a class="top-filter__quantity-link top-filter__quantity-link--active" href="#">20</a>
-                  </li>
-                  <li>
-                    <a class="top-filter__quantity-link" href="#" download="">50</a>
-                  </li>
-                  <li>
-                    <a class="top-filter__quantity-link" href="#">100</a>
-                  </li>
-                </ul>
-              </div>
             </section>
 
-            <ul class="breadcrumbs">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="index.html">Главная</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Каталог товаров</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Ножи</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Ножи складные</a>
-              </li>
-              <li class="breadcrumbs__item">Нож Браконьер</li>
-            </ul>
-
-            <section class="product">
-              <div class="product__img">
-                <ul class="product__slides slider owl-carousel">
-                  <li class="product__slide slider__item">
-                    <img src="img/product.jpg" alt="Изображение продукта">
-                  </li>
-                  <li class="product__slide slider__item">
-                    <img src="img/product.jpg" alt="Изображение продукта">
-                  </li>
-                  <li class="product__slide slider__item">
-                    <img src="img/product.jpg" alt="Изображение продукта">
-                  </li>
-                  <li class="product__slide slider__item">
-                    <img src="img/product.jpg" alt="Изображение продукта">
-                  </li>
-                </ul>
-              </div>
-
-              <div class="product__text">
-                <h1 class="product__title">Нож браконьер</h1>
-                <ul class="product__descr-list">
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Артикул:</span>
-                    <span class="product__descr-right">233-475585</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Название:</span>
-                    <span class="product__descr-right">Балисонг</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Производитель:</span>
-                    <span class="product__descr-right">НОКС</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Длина(мм):</span>
-                    <span class="product__descr-right">250</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Длина клинка(мм):</span>
-                    <span class="product__descr-right">120</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Толщина клинка(мм):</span>
-                    <span class="product__descr-right">2</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Сталь клинка</span>
-                    <span class="product__descr-right">440</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Материал рукояти:</span>
-                    <span class="product__descr-right">ААВ</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Чехол:</span>
-                    <span class="product__descr-right">Кожа</span>
-                  </li>
-                  <li class="product__descr-item">
-                    <span class="product__descr-left">Вес ножа(г):</span>
-                    <span class="product__descr-right">253</span>
-                  </li>
-                </ul>
-                <div class="product__buy-wrapper">
-                  <span class="product__price">1 550 р.</span>
-                  <div class="quantity">
-                    <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                    <button type="button" class="quantity__arrow quantity__arrow--plus">
-                      <span class="visually-hidden">+</span>
-                    </button>
-                    <button type="button" class="quantity__arrow quantity__arrow--minus">
-                      <span class="visually-hidden">-</span>
-                    </button>
-                  </div>
-                  <a class="btn product__btn" href="#">В Корзину</a>
-                </div>
-              </div>
-            </section>
-
-            <section class="product-info">
-              <div class="product-info__nav">
-                <ul class="product-info__list">
-                  <li class="product-info__item product-info__item--active">
-                    <a class="product-info__link" href="#">
-                      <span class="product-info__link-title">Описание</span>
-                    </a>
-                  </li>
-                  <li class="product-info__item">
-                    <a class="product-info__link" href="#">
-                      <span class="product-info__link-title">Видеообзоры</span>
-                    </a>
-                  </li>
-                  <li class="product-info__item">
-                    <a class="product-info__link" href="#">
-                      <span class="product-info__link-title">Статьи о ноже</span>
-                    </a>
-                  </li>
-                  <li class="product-info__item">
-                    <a class="product-info__link" href="#">
-                      <span class="product-info__link-title">Отзывы</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="product-info__content product-info__content--active">
-                <div class="product-info__text-wrapper">
-                  <p class="product-info__text">Мы предлагаем: охотничьи и туристические ножи, кухонные и разделочные ножи, складные и выкидные ножи, специальные и спортивные ножи, метательные ножи, сувенирные и подарочные ножи и даже грибные ножи. У нас все это есть!</p>
-                  <p class="product-info__text">В каталоге представлены российские ножи таких брендов, как ножи Нокс и ножи Кизляр, ножи Саро и Витязь, VN pro и Viking, а так же есть узбекские и таджикские ножи и многое другое. Предлагаем все для заточки ножей: точилки, бруски для заточки, алмазные бруски и т.д. Разумеется, вся продукция сертифицирована и разрешена к свободной продаже на территории РФ.</p>
-                  <p class="product-info__text">Желаете купить ножи оптом? Нет ничего проще! Регистрируетесь на сайте, заходите в раздел для клиентов, набираете ножи и кладете товар в “корзину”, нажимаете кнопку “оформить” и получаете счет. Оплачиваете (нал, безнал - как удобнее) и получаете товар. Можно забрать товар самостоятельно в офисе, а можно оформить доставку. Подробности смотрите в разделе “Купить”.</p>
-                  <p class="product-info__text">Трудно работать с производителями? Работайте с нами! Ножи от производителей по оптовым ценам, специальные скидки и распродажи, удобные условия работы! И все ножи, как правило, есть в наличии!</p>
-                </div>
-              </div>
-              <div class="product-info__content">
-                <p class="product-info__text">Видеообзор ножа</p>
-              </div>
-              <div class="product-info__content">
-                <p class="product-info__text">Статья о ноже</p>
-              </div>
-              <div class="product-info__content">
-                <p class="product-info__text">Отзывы</p>
-              </div>
-            </section>
-
-            <section class="similar-products">
-              <h2 class="similar-products__title">Похожие товары</h2>
-              <ul class="similar-products__list">
-                <li class="similar-products__item catalog-card">
+            <section class="search-results">
+              <h2 class="search-results__title">Результаты поиска</h2>
+              <ul class="search-results__list">
+                <li class="search-results__item catalog-card">
                   <div class="catalog-card__img">
                     <a class="catalog-card__link" href="#">
                       <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
@@ -369,7 +451,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="similar-products__item catalog-card">
+                <li class="search-results__item catalog-card">
                   <div class="catalog-card__img">
                     <a class="catalog-card__link" href="#">
                       <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
@@ -396,7 +478,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="similar-products__item catalog-card">
+                <li class="search-results__item catalog-card">
                   <div class="catalog-card__img">
                     <a class="catalog-card__link" href="#">
                       <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
@@ -423,67 +505,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="similar-products__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                      <img src="img/product-2.jpg" alt="Изображение товара" width="195" height="84">
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="similar-products__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                      <img src="img/product-2.jpg" alt="Изображение товара" width="195" height="84">
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
-
-            <section class="recommended-products">
-              <h2 class="recommended-products__title">Рекомендуем с этим товаром</h2>
-              <ul class="recommended-products__list">
-                <li class="recommended-products__item catalog-card">
+                <li class="search-results__item catalog-card">
                   <div class="catalog-card__img">
                     <a class="catalog-card__link" href="#">
                       <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
@@ -510,88 +532,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="recommended-products__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                      <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="recommended-products__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                      <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="recommended-products__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                      <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="recommended-products__item catalog-card">
+                <li class="search-results__item catalog-card">
                   <div class="catalog-card__img">
                     <a class="catalog-card__link" href="#">
                       <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
@@ -756,9 +697,8 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/picturefill.js"></script>
-    <script src="js/tabs.js"></script>
     <script src="js/all.js"></script>
   </body>
 </html>

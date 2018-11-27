@@ -1,5 +1,6 @@
 'use strict';
 (function () {
+  if (productInfoTabs) {
   var productInfoTabs = new Tabs({
     wrapperClass: 'product-info',
     tabContainerClass: 'product-info__list',
@@ -10,4 +11,5 @@
   });
 
   productInfoTabs.addListener();
+ }
 })();

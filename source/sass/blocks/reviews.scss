@@ -24,6 +24,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: solid 2px $red;
+  }
 }
 
 .reviews__text {

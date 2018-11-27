@@ -6,5 +6,6 @@
   "source/js/modules/input-number.js",
   "source/js/modules/catalog-table.js",
   "source/js/modules/filter-slider.js",
-  "source/js/modules/product-info.js"
+  "source/js/modules/product-info.js",
+  "source/js/modules/slider-range.js"
 ]

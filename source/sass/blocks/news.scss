@@ -36,6 +36,15 @@
   display: block;
 }
 
+.news__text {
+  &:hover,
+  &:focus,
+  &:active {
+    color: $red;
+    text-decoration: underline;
+  }
+}
+
 .news__more-info {
   font-size: 14px;
   line-height: 24px;
@@ -46,6 +55,10 @@
 }
 
 @media (min-width: $desktop-width) {
+  .news {
+    margin-top: -10px;
+  }
+
   .news__title {
     text-align: left;
   }

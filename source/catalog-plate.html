@@ -115,7 +115,7 @@
             <li class="site-list__item">
               <a class="site-list__link" href="#">Главная</a>
             </li>
-            <li class="site-list__item">
+            <li class="site-list__item site-list__item--active">
               <a class="site-list__link" href="catalog-table.html">Каталог</a>
             </li>
             <li class="site-list__item">
@@ -138,11 +138,8 @@
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="#">
-                <form class="site-list__form" action="#" method="post">
-                  <label class="visually-hidden" for="user-search">Поиск по сайту</label>
-                  <input class="site-list__field" id="user-search" type="search" name="search" placeholder="Поиск по сайту">
-                  <button class="visually-hidden" type="submit">Отправить</button>
-                </form>
+                <label class="visually-hidden" for="user-search">Поиск по сайту</label>
+                <input class="site-list__field" id="user-search" type="search" name="search" placeholder="Поиск по сайту">
               </a>
             </li>
           </ul>
@@ -151,7 +148,7 @@
 
       <main class="page-main">
         <div class="page-main__container page-main__container--column">
-          <div class="page-main__wrapper-column">
+          <div class="page-main__wrapper">
             <section class="top-filter">
               <form class="top-filter__form" method="post" action="#">
                 <div class="top-filter__item-wrapper">
@@ -197,814 +194,802 @@
                 </ul>
               </div>
             </section>
+            <div class="page-main__container page-main__container--inner">
+              <div class="page-main__wrapper page-main__wrapper--nav">
+                <section class="catalog-nav">
+                  <div class="catalog-nav__wrapper">
+                    <h2 class="catalog-nav__title">Каталог</h2>
+                    <button class="catalog-nav__main-toggle" type="button">
+                      <span class="visually-hidden">Раскрыть раздел</span>
+                    </button>
+                    <ul class="catalog-nav__list">
+                      <li class="catalog-nav__item catalog-nav__item--dropdown">
+                        <button class="catalog-nav__toggle" type="button">
+                          <span class="visually-hidden">Раскрыть раздел</span>
+                        </button>
+                        <input class="visually-hidden catalog-nav__input" id="fixed-blade-knives" type="checkbox" name="fixed-blade-knives">
+                        <label class="catalog-nav__label" for="fixed-blade-knives"><a class="catalog-nav__link" href="#">Ножи с фиксированным клинком</a></label>
+                        <ul class="catalog-nav__item-list sub-nav">
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="folding-knives" type="checkbox" name="folding-knives">
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="butterflies" type="checkbox" name="butterflies">
+                            <label class="sub-nav__label" for="butterflies"><a class="sub-nav__link" href="#">Бабочки (балисонги)</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="mechanical" type="checkbox" name="mechanical">
+                            <label class="sub-nav__label" for="mechanical"><a class="sub-nav__link" href="#">Механические</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="multifunctional" type="checkbox" name="multifunctional">
+                            <label class="sub-nav__label" for="multifunctional"><a class="sub-nav__link" href="#">Многофункциональные</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="automatic" type="checkbox" name="automatic">
+                            <label class="sub-nav__label" for="automatic"><a class="sub-nav__link" href="#">Автоматические</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="semi-automatic" type="checkbox" name="semi-automatic">
+                            <label class="sub-nav__label" for="semi-automatic"><a class="sub-nav__link" href="#">Полуавтоматические</a></label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="axes-shovels" type="checkbox" name="axes-shovels">
+                        <label class="catalog-nav__label" for="axes-shovels"><a class="catalog-nav__link" href="#">Топоры и лопаты</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="lanterns" type="checkbox" name="lanterns">
+                        <label class="catalog-nav__label" for="lanterns"><a class="catalog-nav__link" href="#">Фонари</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="crossbows" type="checkbox" name="crossbows">
+                        <label class="catalog-nav__label" for="crossbows"><a class="catalog-nav__link" href="#">Арбалеты</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="airguns-accessories" type="checkbox" name="airguns-accessories">
+                        <label class="catalog-nav__label" for="airguns-accessories"><a class="catalog-nav__link" href="#">Пневматическое оружие и комплектующие к нему</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="slingshots-sarbakans" type="checkbox" name="slingshots-sarbakans">
+                        <label class="catalog-nav__label" for="slingshots-sarbakans"><a class="catalog-nav__link" href="#">Рогатки и сарбаканы</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="tactical-pens" type="checkbox" name="tactical-pens">
+                        <label class="catalog-nav__label" for="tactical-pens"><a class="catalog-nav__link" href="#">Ручки тактические</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="knife-care-products" type="checkbox" name="knife-care-products">
+                        <label class="catalog-nav__label" for="knife-care-products"><a class="catalog-nav__link" href="#">Средства  ухода за ножами</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="cases-sheaths-holsters" type="checkbox" name="cases-sheaths-holsters">
+                        <label class="catalog-nav__label" for="cases-sheaths-holsters"><a class="catalog-nav__link" href="#">Чехлы, ножны и кобуры</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="paracord" type="checkbox" name="paracord">
+                        <label class="catalog-nav__label" for="paracord"><a class="catalog-nav__link" href="#">Паракорд</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="flasks-thermoses-dishes" type="checkbox" name="flasks-thermoses-dishes">
+                        <label class="catalog-nav__label" for="flasks-thermoses-dishes"><a class="catalog-nav__link" href="#">Фляги, термосы, посуда</a></label>
+                      </li>
+                      <li class="catalog-nav__item catalog-nav__item--dropdown">
+                        <button class="catalog-nav__toggle" type="button">
+                          <span class="visually-hidden">Раскрыть раздел</span>
+                        </button>
+                        <input class="visually-hidden catalog-nav__input" id="lighters" type="checkbox" name="lighters">
+                        <label class="catalog-nav__label catalog-nav__label--dropdown" for="lighters"><a class="catalog-nav__link" href="#">Зажигалки</a></label>
+                        <ul class="catalog-nav__item-list sub-nav">
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="gas" type="checkbox" name="gas">
+                            <label class="sub-nav__label" for="gas"><a class="sub-nav__link" href="#">Газовые</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="petrol" type="checkbox" name="petrol">
+                            <label class="sub-nav__label" for="petrol"><a class="sub-nav__link" href="#">Бензиновые</a></label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="gifts-souvenirs" type="checkbox" name="gifts-souvenirs">
+                        <label class="catalog-nav__label" for="gifts-souvenirs"><a class="catalog-nav__link" href="#">Подарки и сувениры</a></label>
+                      </li>
+                      <li class="catalog-nav__item catalog-nav__item--dropdown">
+                        <button class="catalog-nav__toggle" type="button">
+                          <span class="visually-hidden">Раскрыть раздел</span>
+                        </button>
+                        <input class="visually-hidden catalog-nav__input" id="accessories" type="checkbox" name="accessories">
+                        <label class="catalog-nav__label catalog-nav__label--dropdown" for="accessories"><a class="catalog-nav__link" href="#">Аксессуары</a></label>
+                        <ul class="catalog-nav__item-list sub-nav">
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="keychains" type="checkbox" name="keychains">
+                            <label class="sub-nav__label" for="keychains"><a class="sub-nav__link" href="#">Брелки</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="lanyards" type="checkbox" name="lanyards">
+                            <label class="sub-nav__label" for="lanyards"><a class="sub-nav__link" href="#">Темляки</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="bracelets" type="checkbox" name="bracelets">
+                            <label class="sub-nav__label" for="bracelets"><a class="sub-nav__link" href="#">Браслеты</a></label>
+                          </li>
+                          <li class="sub-nav__item">
+                            <input class="visually-hidden catalog-nav__input" id="carabiners" type="checkbox" name="carabiners">
+                            <label class="sub-nav__label" for="carabiners"><a class="sub-nav__link" href="#">Карабины</a></label>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="other" type="checkbox" name="other">
+                        <label class="catalog-nav__label" for="other"><a class="catalog-nav__link" href="#">Прочее</a></label>
+                      </li>
+                    </ul>
 
-            <section class="catalog-nav">
-              <ul class="catalog-nav__list">
-                <li class="catalog-nav__item catalog-nav__item--dropdown">
-                  <button class="catalog-nav__toggle" type="button">
-                    <span class="visually-hidden">Раскрыть раздел</span>
-                  </button>
-                  <input class="visually-hidden catalog-nav__input" id="fixed-blade-knives" type="checkbox" name="fixed-blade-knives">
-                  <label class="catalog-nav__label" for="fixed-blade-knives"><a class="catalog-nav__link" href="#">Ножи с фиксированным клинком</a></label>
-                  <ul class="catalog-nav__item-list sub-nav">
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="folding-knives" type="checkbox" name="folding-knives">
+                    <ul class="catalog-nav__list">
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="new" type="checkbox" name="new">
+                        <label class="catalog-nav__label catalog-nav__label--new" for="new"><a class="catalog-nav__link" href="#">Новинка</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="hit" type="checkbox" name="hit">
+                        <label class="catalog-nav__label" for="hit"><a class="catalog-nav__link" href="#">Хит продаж</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="sale" type="checkbox" name="sale">
+                        <label class="catalog-nav__label" for="sale"><a class="catalog-nav__link" href="#">Акция</a></label>
+                      </li>
+                      <li class="catalog-nav__item">
+                        <input class="visually-hidden catalog-nav__input" id="recommend" type="checkbox" name="recommend">
+                        <label class="catalog-nav__label" for="recommend"><a class="catalog-nav__link" href="#">Акция</a></label>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+
+              <div class="page-main__wrapper page-main__wrapper--content">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="index.html">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="#">Каталог товаров</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="#">Ножи</a>
+                  </li>
+                  <li class="breadcrumbs__item">Ножи складные</li>
+                </ul>
+
+                <section class="catalog-plate">
+                  <ul class="catalog-plate__list">
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="butterflies" type="checkbox" name="butterflies">
-                      <label class="sub-nav__label" for="butterflies"><a class="sub-nav__link" href="#">Бабочки (балисонги)</a></label>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="mechanical" type="checkbox" name="mechanical">
-                      <label class="sub-nav__label" for="mechanical"><a class="sub-nav__link" href="#">Механические</a></label>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="multifunctional" type="checkbox" name="multifunctional">
-                      <label class="sub-nav__label" for="multifunctional"><a class="sub-nav__link" href="#">Многофункциональные</a></label>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="automatic" type="checkbox" name="automatic">
-                      <label class="sub-nav__label" for="automatic"><a class="sub-nav__link" href="#">Автоматические</a></label>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="semi-automatic" type="checkbox" name="semi-automatic">
-                      <label class="sub-nav__label" for="semi-automatic"><a class="sub-nav__link" href="#">Полуавтоматические</a></label>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="catalog-plate__item catalog-card">
+                      <div class="catalog-card__img">
+                        <a class="catalog-card__link" href="#">
+                          <img src="img/product-2.jpg" alt="Изображение товара" width="194" height="85">
+                        </a>
+                      </div>
+                      <div class="catalog-card__text">
+                        <h3 class="catalog-card__title">
+                          <a class="catalog-card__link" href="#">Нож браконьер</a>
+                        </h3>
+                        <span class="catalog-card__descr">Артикул 305-540421</span>
+                        <span class="catalog-card__descr">Производитель: Нокс</span>
+                        <div class="catalog-card__buy-wrapper">
+                          <span class="catalog-card__price">1 550 р.</span>
+                          <div class="quantity">
+                            <input class="quantity__field " type="number" name="quantity" min="1" value="1">
+                            <button type="button" class="quantity__arrow quantity__arrow--plus">
+                              <span class="visually-hidden">+</span>
+                            </button>
+                            <button type="button" class="quantity__arrow quantity__arrow--minus">
+                              <span class="visually-hidden">-</span>
+                            </button>
+                          </div>
+                          <a class="btn catalog-card__btn" href="#">В Корзину</a>
+                        </div>
+                      </div>
                     </li>
                   </ul>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="axes-shovels" type="checkbox" name="axes-shovels">
-                  <label class="catalog-nav__label" for="axes-shovels"><a class="catalog-nav__link" href="#">Топоры и лопаты</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="lanterns" type="checkbox" name="lanterns">
-                  <label class="catalog-nav__label" for="lanterns"><a class="catalog-nav__link" href="#">Фонари</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="crossbows" type="checkbox" name="crossbows">
-                  <label class="catalog-nav__label" for="crossbows"><a class="catalog-nav__link" href="#">Арбалеты</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="airguns-accessories" type="checkbox" name="airguns-accessories">
-                  <label class="catalog-nav__label" for="airguns-accessories"><a class="catalog-nav__link" href="#">Пневматическое оружие и комплектующие к нему</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="slingshots-sarbakans" type="checkbox" name="slingshots-sarbakans">
-                  <label class="catalog-nav__label" for="slingshots-sarbakans"><a class="catalog-nav__link" href="#">Рогатки и сарбаканы</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="tactical-pens" type="checkbox" name="tactical-pens">
-                  <label class="catalog-nav__label" for="tactical-pens"><a class="catalog-nav__link" href="#">Ручки тактические</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="knife-care-products" type="checkbox" name="knife-care-products">
-                  <label class="catalog-nav__label" for="knife-care-products"><a class="catalog-nav__link" href="#">Средства  ухода за ножами</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="cases-sheaths-holsters" type="checkbox" name="cases-sheaths-holsters">
-                  <label class="catalog-nav__label" for="cases-sheaths-holsters"><a class="catalog-nav__link" href="#">Чехлы, ножны и кобуры</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="paracord" type="checkbox" name="paracord">
-                  <label class="catalog-nav__label" for="paracord"><a class="catalog-nav__link" href="#">Паракорд</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="flasks-thermoses-dishes" type="checkbox" name="flasks-thermoses-dishes">
-                  <label class="catalog-nav__label" for="flasks-thermoses-dishes"><a class="catalog-nav__link" href="#">Фляги, термосы, посуда</a></label>
-                </li>
-                <li class="catalog-nav__item catalog-nav__item--dropdown">
-                  <button class="catalog-nav__toggle" type="button">
-                    <span class="visually-hidden">Раскрыть раздел</span>
-                  </button>
-                  <input class="visually-hidden catalog-nav__input" id="lighters" type="checkbox" name="lighters">
-                  <label class="catalog-nav__label catalog-nav__label--dropdown" for="lighters"><a class="catalog-nav__link" href="#">Зажигалки</a></label>
-                  <ul class="catalog-nav__item-list sub-nav">
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="gas" type="checkbox" name="gas">
-                      <label class="sub-nav__label" for="gas"><a class="sub-nav__link" href="#">Газовые</a></label>
-                    </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="petrol" type="checkbox" name="petrol">
-                      <label class="sub-nav__label" for="petrol"><a class="sub-nav__link" href="#">Бензиновые</a></label>
-                    </li>
-                  </ul>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="gifts-souvenirs" type="checkbox" name="gifts-souvenirs">
-                  <label class="catalog-nav__label" for="gifts-souvenirs"><a class="catalog-nav__link" href="#">Подарки и сувениры</a></label>
-                </li>
-                <li class="catalog-nav__item catalog-nav__item--dropdown">
-                  <button class="catalog-nav__toggle" type="button">
-                    <span class="visually-hidden">Раскрыть раздел</span>
-                  </button>
-                  <input class="visually-hidden catalog-nav__input" id="accessories" type="checkbox" name="accessories">
-                  <label class="catalog-nav__label catalog-nav__label--dropdown" for="accessories"><a class="catalog-nav__link" href="#">Аксессуары</a></label>
-                  <ul class="catalog-nav__item-list sub-nav">
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="keychains" type="checkbox" name="keychains">
-                      <label class="sub-nav__label" for="keychains"><a class="sub-nav__link" href="#">Брелки</a></label>
-                    </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="lanyards" type="checkbox" name="lanyards">
-                      <label class="sub-nav__label" for="lanyards"><a class="sub-nav__link" href="#">Темляки</a></label>
-                    </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="bracelets" type="checkbox" name="bracelets">
-                      <label class="sub-nav__label" for="bracelets"><a class="sub-nav__link" href="#">Браслеты</a></label>
-                    </li>
-                    <li class="sub-nav__item">
-                      <input class="visually-hidden catalog-nav__input" id="carabiners" type="checkbox" name="carabiners">
-                      <label class="sub-nav__label" for="carabiners"><a class="sub-nav__link" href="#">Карабины</a></label>
-                    </li>
-                  </ul>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="other" type="checkbox" name="other">
-                  <label class="catalog-nav__label" for="other"><a class="catalog-nav__link" href="#">Прочее</a></label>
-                </li>
-              </ul>
-
-              <ul class="catalog-nav__list">
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="new" type="checkbox" name="new">
-                  <label class="catalog-nav__label catalog-nav__label--new" for="new"><a class="catalog-nav__link" href="#">Новинка</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="hit" type="checkbox" name="hit">
-                  <label class="catalog-nav__label" for="hit"><a class="catalog-nav__link" href="#">Хит продаж</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="sale" type="checkbox" name="sale">
-                  <label class="catalog-nav__label" for="sale"><a class="catalog-nav__link" href="#">Акция</a></label>
-                </li>
-                <li class="catalog-nav__item">
-                  <input class="visually-hidden catalog-nav__input" id="recommend" type="checkbox" name="recommend">
-                  <label class="catalog-nav__label" for="recommend"><a class="catalog-nav__link" href="#">Акция</a></label>
-                </li>
-              </ul>
-            </section>
-
-            <ul class="breadcrumbs">
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="index.html">Главная</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Каталог товаров</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a class="breadcrumbs__link" href="#">Ножи</a>
-              </li>
-              <li class="breadcrumbs__item">Ножи складные</li>
-            </ul>
-
-            <section class="catalog-plate">
-              <ul class="catalog-plate__list">
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-                                <li class="catalog-plate__item catalog-card">
-                  <div class="catalog-card__img">
-                    <a class="catalog-card__link" href="#">
-                        <img src="img/product-2.jpg" alt="Изображение товара" width="221" height="97">
-
-                    </a>
-                  </div>
-                  <div class="catalog-card__text">
-                    <h3 class="catalog-card__title">
-                      <a class="catalog-card__link" href="#">Нож браконьер</a>
-                    </h3>
-                    <span class="catalog-card__descr">Артикул 305-540421</span>
-                    <span class="catalog-card__descr">Производитель: Нокс</span>
-                    <div class="catalog-card__buy-wrapper">
-                      <span class="catalog-card__price">1 550 р.</span>
-                      <div class="quantity">
-                        <input class="quantity__field " type="number" name="quantity" min="1" value="1">
-                        <button type="button" class="quantity__arrow quantity__arrow--plus">
-                          <span class="visually-hidden">+</span>
-                        </button>
-                        <button type="button" class="quantity__arrow quantity__arrow--minus">
-                          <span class="visually-hidden">-</span>
-                        </button>
-                      </div>
-                      <a class="btn catalog-card__btn" href="#">В Корзину</a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </section>
+                </section>
+              </div>
+            </div>
           </div>
         </div>
       </main>

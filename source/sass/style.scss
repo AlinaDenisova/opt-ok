@@ -3,8 +3,9 @@
 @import "variables.scss";
 @import "mixins.scss";
 @import "global.scss";
-@import "owl.carousel.scss";
-@import "owl.theme.default.scss";
+@import "owl-carousel.scss";
+@import "owl-theme-default.scss";
+@import "price-range-style.scss";
 @import "blocks/page-wrapper.scss";
 @import "blocks/page-header.scss";
 @import "blocks/phone-list.scss";
@@ -32,8 +33,11 @@
 @import "blocks/breadcrumbs.scss";
 @import "blocks/sections.scss";
 @import "blocks/catalog-table.scss";
+@import "blocks/catalog-plate.scss";
 @import "blocks/product.scss";
 @import "blocks/product-info.scss";
 @import "blocks/similar-products.scss";
 @import "blocks/recommended-products.scss";
+@import "blocks/filters.scss";
+@import "blocks/search-results.scss";
 

@@ -63,4 +63,12 @@
       margin-right: 0;
     }
   }
+
+  .phone-list__phone {
+    &:hover,
+    &:active,
+    &:focus {
+      color: $red;
+    }
+  }
 }

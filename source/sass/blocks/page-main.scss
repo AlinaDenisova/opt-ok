@@ -5,9 +5,12 @@
   padding-bottom: 105px;
 }
 
-.page-main__wrapper,
-.page-main__wrapper-column {
+.page-main__wrapper {
   @include container;
+
+  &--nav {
+    padding: 0;
+  }
 }
 
 @media (min-width: $desktop-width) {
@@ -15,10 +18,17 @@
     @include desktop-width;
     display: flex;
     padding-bottom: 105px;
+    padding-top: 35px;
 
     &--column {
       flex-direction: column;
       padding-bottom: 85px;
+    }
+
+    &--inner {
+      padding: 0;
+      min-width: 1120px;
+      max-width: 1120px;
     }
   }
 
@@ -27,24 +37,23 @@
     flex-direction: column;
     padding: 0;
     margin-right: 19px;
-    padding-top: 35px;
 
-    &:first-child {
+    &--nav {
       width: 234px;
     }
 
-    &:nth-child(2) {
+    &--slider {
       width: 616px;
     }
 
-    &:last-child {
+    &--aside {
       width: 234px;
       margin-right: 0;
-      padding-top: 25px;
     }
-  }
 
-  .page-main__wrapper-column {
-    padding: 0;
+    &--content {
+      margin-right: 0;
+      width: 77%;
+    }
   }
 }

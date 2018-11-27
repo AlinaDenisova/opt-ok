@@ -1,0 +1,13 @@
+.catalog-plate__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.catalog-plate__item {
+  width: 203px;
+  margin-bottom: 15px;
+}
+
+

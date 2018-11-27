@@ -23,6 +23,12 @@ input::-webkit-inner-spin-button {
   color: $dark-gray;
   padding: 0 12px;
   box-sizing: border-box;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $red;
+  }
 }
 
 .quantity__arrow {

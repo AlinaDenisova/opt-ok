@@ -45,9 +45,6 @@
   display: none;
 }
 
-.page-header__right {
-}
-
 .page-header__features {
   display: none;
 }
@@ -235,6 +232,12 @@
     color: #ffffff;
     font-size: 14px;
     line-height: 16px;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #5f070c;
+    }
   }
 
   .page-header__basket-icon {

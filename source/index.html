@@ -112,11 +112,11 @@
 
         <div class="page-header__site-list-wrapper">
           <ul class="site-list">
-            <li class="site-list__item">
+            <li class="site-list__item site-list__item--active">
               <a class="site-list__link" href="#">Главная</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__link" href="product-card.html">Каталог</a>
+              <a class="site-list__link" href="catalog-plate.html">Каталог</a>
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="#">Новости</a>
@@ -125,7 +125,7 @@
               <a class="site-list__link" href="#">Акции!</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__link" href="#">Купить</a>
+              <a class="site-list__link" href="filters.html">Купить</a>
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="#">Контакты</a>
@@ -138,11 +138,8 @@
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="#">
-                <form class="site-list__form" action="#" method="post">
-                  <label class="visually-hidden" for="user-search">Поиск по сайту</label>
-                  <input class="site-list__field" id="user-search" type="search" name="search" placeholder="Поиск по сайту">
-                  <button class="visually-hidden" type="submit">Отправить</button>
-                </form>
+                <label class="visually-hidden" for="user-search">Поиск по сайту</label>
+                <input class="site-list__field" id="user-search" type="search" name="search" placeholder="Поиск по сайту">
               </a>
             </li>
           </ul>
@@ -151,7 +148,7 @@
 
       <main class="page-main">
         <div class="page-main__container">
-          <div class="page-main__wrapper">
+          <div class="page-main__wrapper page-main__wrapper--nav">
             <section class="catalog-nav">
               <div class="catalog-nav__wrapper">
                 <h2 class="catalog-nav__title">Каталог</h2>
@@ -308,7 +305,7 @@
             </section>
           </div>
 
-          <div class="page-main__wrapper">
+          <div class="page-main__wrapper page-main__wrapper--slider">
             <section class="slider promo">
               <ul class="promo__slides">
                 <li class="promo__slide promo__slide--active promo__slide--1">
@@ -491,7 +488,7 @@
             </section>
           </div>
 
-          <div class="page-main__wrapper">
+          <div class="page-main__wrapper page-main__wrapper--aside">
             <section class="news">
               <div class="news__container">
                 <h2 class="news__title">Новости</h2>

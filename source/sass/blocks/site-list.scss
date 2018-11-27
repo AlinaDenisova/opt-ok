@@ -75,6 +75,17 @@
     background-color: transparent;
     background-image: none;
 
+    &--active {
+      background-image: linear-gradient(to top, #bf1003, #870b09 50%, #fd494e 52%, #db111e 80%, #ca110e 99%);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-image: linear-gradient(to top, rgba(191, 16, 3, 0.3), rgba(135, 11, 9, 0.7) 50%, rgba(253, 73, 78, 0.7) 52%, rgba(219, 17, 30, 0.7) 80%, rgba(202, 17, 14, 0.7) 99%);
+    }
+
+
     &:last-child {
       padding: 5px 0;
     }
