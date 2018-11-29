@@ -1,6 +1,6 @@
 'use strict';
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
     $('.quantity > button').on('click', function() {
     var input = $(this).closest('.quantity').find('input');
     var value = parseInt(input.val()) || 0;
@@ -13,5 +13,5 @@ jQuery(document).ready(function() {
       value = value + 1;
     }
     input.val(value).change();
-  })();
+  });
 });

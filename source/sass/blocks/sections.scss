@@ -2,9 +2,13 @@
   border: 2px solid #e2e6ea;
   margin-bottom: 15px;
   border-radius: 3px;
-  display: flex;
   flex-direction: column;
-  padding: 5px 12px 10px 17px;
+  padding: 20px 12px 10px 17px;
+  display: none;
+
+  &--active {
+    display: flex;
+  }
 }
 
 .sections__title {
@@ -30,6 +34,7 @@
   text-decoration: underline;
   display: block;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .sections__offers-list {
@@ -103,8 +108,8 @@
 
 @media (min-width: $desktop-width) {
   .sections {
-    display: flex;
     flex-direction: row;
+    padding: 5px 12px 10px 17px;
   }
 
   .sections__text {

@@ -50,6 +50,12 @@
   &:last-child {
     margin-right: 0;
   }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $red;
+  }
 }
 
 .top-filter__search-field {
@@ -66,6 +72,12 @@
   background-image: url("../img/icon-search.svg");
   background-repeat: no-repeat;
   background-position: 97% 6px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $red;
+  }
 }
 
 .top-filter__link {
@@ -81,6 +93,12 @@
     align-items: flex-end;
     margin-bottom: 10px;
     width: 30%;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #5f070c;;
   }
 }
 
@@ -130,10 +148,11 @@
   color: $red;
   font-size: 14px;
   line-height: 16px;
+  border-bottom: 1px dotted $red;
 
   &--active {
     color: $gray;
-    text-decoration: none;
+    border-bottom: none;
   }
 }
 

@@ -1,11 +1,24 @@
 .catalog-nav {
   width: 100%;
-  margin-bottom: 30px;
+  border: 1px solid #e2e6ea;
+  border-bottom: 0;
 }
 
 .catalog-nav__wrapper {
   position: relative;
+}
 
+.catalog-nav__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  color: $dark-gray;
+  margin: 0;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .catalog-nav__list {
@@ -78,6 +91,10 @@
     border-right: none;
     border-bottom: none;
   }
+}
+
+.catalog-nav__main-toggle {
+  top: 20px;
 }
 
 .catalog-nav__label {
@@ -153,6 +170,11 @@
 }
 
 @media (min-width: $desktop-width) {
+  .catalog-nav {
+    margin-bottom: 30px;
+    border: none;
+  }
+
   .catalog-nav__title,
   .catalog-nav__main-toggle {
     display: none;

@@ -5,6 +5,7 @@
   "source/js/modules/filter-left.js",
   "source/js/modules/slider.js",
   "source/js/modules/input-number.js",
+  "source/js/modules/hide-slider.js",
   "source/js/modules/catalog-table.js",
   "source/js/modules/filter-slider.js",
   "source/js/modules/product-info.js",

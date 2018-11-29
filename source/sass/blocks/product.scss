@@ -28,13 +28,13 @@
   }
 }
 
-.owl-dots {
+.product__slides .owl-dots {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.owl-dot {
+.product__slides .owl-dot {
   float: left;
   width: 100px;
   height: 25px;

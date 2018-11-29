@@ -4,6 +4,11 @@
   border-radius: 3px;
   display: flex;
   padding: 23px 12px 15px 17px;
+  display: none;
+
+  &--active {
+    display: flex;
+  }
 }
 
 .brands__title {
@@ -27,6 +32,7 @@
   line-height: 20px;
   color: $red;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .brands__wrapper {

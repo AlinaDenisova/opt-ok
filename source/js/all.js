@@ -129,10 +129,6 @@ window.catalogNav = (function () {
       });
 
     var dropdownItem = function (item) {
-      var openedItems = document.querySelectorAll('.catalog-nav__toggle--active');
-      [].forEach.call(openedItems, function (openedItem) {
-        openedItem !== item && openedItem.classList.remove('catalog-nav__toggle--active');
-      });
       if (item.classList.contains('catalog-nav__toggle--active')) {
         item.classList.remove('catalog-nav__toggle--active');
       } else {
@@ -162,6 +158,8 @@ window.filterLeft = (function () {
     var filterLeft = document.querySelector('.filter-left');
     var filterLeftToggle = document.querySelector('.filter-left__main-toggle');
     var filterLeftForm = document.querySelector('.filter-left__form');
+    var filterLeftMoreLink = document.querySelector('.filter-left__link');
+    var filterLeftMoreWrapper= document.querySelectorAll('.filter-left__input-wrapper--more');
     var MOBILE_WIDTH_MAX = 1099;
 
     if (filterLeftForm) {
@@ -178,16 +176,23 @@ window.filterLeft = (function () {
       });
 
     var dropdownItem = function (item) {
-      var openedItems = document.querySelectorAll('.filter-left__group-title--active');
-      [].forEach.call(openedItems, function (openedItem) {
-        openedItem !== item && openedItem.classList.remove('filter-left__group-title--active');
-      });
       if (item.classList.contains('filter-left__group-title--active')) {
         item.classList.remove('filter-left__group-title--active');
       } else {
         item.classList.add('filter-left__group-title--active');
       }
     };
+
+    filterLeftMoreLink.addEventListener("click", function(evt) {
+      for (var i = 0; i < filterLeftMoreWrapper.length; i++) {
+      evt.preventDefault();
+      if (filterLeftMoreWrapper[i].classList.contains("filter-left__input-wrapper--active")) {
+        filterLeftMoreWrapper[i].classList.remove("filter-left__input-wrapper--active");
+      } else {
+        filterLeftMoreWrapper[i].classList.add("filter-left__input-wrapper--active");
+      }
+     }
+    });
 
     //выбор выпадающего списка
     var dropdownItemHandler = function (evt) {
@@ -372,7 +377,7 @@ window.filterLeft = (function () {
 
 'use strict';
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
     $('.quantity > button').on('click', function() {
     var input = $(this).closest('.quantity').find('input');
     var value = parseInt(input.val()) || 0;
@@ -385,8 +390,30 @@ jQuery(document).ready(function() {
       value = value + 1;
     }
     input.val(value).change();
-  })();
+  });
 });
+
+'use strict';
+
+(function () {
+var hiddenToggle = document.querySelector('.sections__hidden');
+var sections = document.querySelector('.sections');
+  if (sections) {
+
+  hiddenToggle.addEventListener("click", function(evt) {
+      sections.classList.remove("sections--active");
+  });
+  }
+
+  var hiddenBrandsToggle = document.querySelector('.brands__hidden');
+  var brands = document.querySelector('.brands');
+    if (brands) {
+
+    hiddenBrandsToggle.addEventListener("click", function(evt) {
+        brands.classList.remove("brands--active");
+    });
+    }
+})();
 
 jQuery(document).ready(function($) {
   (function() {
@@ -457,50 +484,44 @@ $(function(){
 });
 
 $(function() {
-  // 1) ASSIGN EACH 'DOT' A NUMBER
     var dotcount = 1;
-    jQuery('.owl-dot').each(function() {
+    jQuery('.product__slides .owl-dot').each(function() {
       jQuery( this ).addClass( 'dotnumber' + dotcount);
       jQuery( this ).attr('data-info', dotcount);
       dotcount=dotcount+1;
     });
 
-     // 2) ASSIGN EACH 'SLIDE' A NUMBER
     var slidecount = 1;
-
-    jQuery('.owl-item').not('.cloned').each(function() {
+    jQuery('.product__slides .owl-item').not('.cloned').each(function() {
       jQuery( this ).addClass('slidenumber' + slidecount);
       slidecount = slidecount+1;
     });
 
-    // SYNC THE SLIDE NUMBER IMG TO ITS DOT COUNTERPART (E.G SLIDE 1 IMG TO DOT 1 BACKGROUND-IMAGE)
-    var grab = jQuery('.owl-dot').data('info');
-
-    jQuery('.owl-dot > span').each(function() {
+    var grab = jQuery('.product__slides .owl-dot').data('info');
+    jQuery('.product__slides .owl-dot > span').each(function() {
     var slidegrab = jQuery('.slidenumber'+ grab +' img').attr('src');
     jQuery(this).css("background-image", "url("+slidegrab+")");
     });
 
-    // THIS FINAL BIT CAN BE REMOVED AND OVERRIDEN WITH YOUR OWN CSS OR FUNCTION, I JUST HAVE IT
-      // TO MAKE IT ALL NEAT
-    var amount = jQuery('.owl-dot').length;
+    var amount = jQuery('.product__slides .owl-dot').length;
     var gotowidth = 94/amount;
     var MOBILE_WIDTH_MAX = 1099;
-
     if (window.innerWidth <= MOBILE_WIDTH_MAX){
-      jQuery('.owl-dot').css("width", gotowidth+"%");
-      var newwidth = jQuery('.owl-dot').width();
-      jQuery('.owl-dot').css("height", newwidth/1.2 + "px");
+      jQuery('.product__slides .owl-dot').css("width", gotowidth+"%");
+      var newwidth = jQuery('.product__slides .owl-dot').width();
+      jQuery('.product__slides .owl-dot').css("height", newwidth/1.2 + "px");
     } else {
-      jQuery('.owl-dot').css("width", 114);
-      var newwidth = jQuery('.owl-dot').width();
-      jQuery('.owl-dot').css("height", 90);
+      jQuery('.product__slides > .owl-dot').css("width", 114);
+      var newwidth = jQuery('.product__slides .owl-dot').width();
+      jQuery('.product__slides .owl-dot').css("height", 90);
     }
 });
 
 'use strict';
 (function () {
-  if (productInfoTabs) {
+  var productInfo = document.querySelector('.product-info');
+
+  if (productInfo) {
   var productInfoTabs = new Tabs({
     wrapperClass: 'product-info',
     tabContainerClass: 'product-info__list',
@@ -511,7 +532,7 @@ $(function() {
   });
 
   productInfoTabs.addListener();
- }
+  }
 })();
 
 $(document).ready(function(){

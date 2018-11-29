@@ -1,6 +1,6 @@
 .filter-left {
-  padding: 0 10px;
   border: 1px solid #e2e6ea;
+  width: 100%;
 }
 
 .filter-left__wrapper {
@@ -15,6 +15,7 @@
   margin: 0;
   text-transform: uppercase;
   border-bottom: 1px solid #e2e6ea;
+  padding: 0 10px;
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -26,7 +27,7 @@
   height: 25px;
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 15px;
   z-index: 2;
   background-color: transparent;
 
@@ -55,6 +56,7 @@
 
 .filter-left__form {
   display: none;
+  padding: 0 10px;
 
   &--active {
     display: block;
@@ -64,7 +66,7 @@
 .filter-left__group {
   border-bottom: 1px solid #e2e6ea;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 
   &:last-child {
     border-bottom: none;
@@ -76,8 +78,8 @@
   font-weight: 700;
   line-height: 26px;
   margin: 0;
-  padding-bottom: 15px;
   color: $dark-gray;
+  cursor: pointer;
 
   & span {
     border-bottom: 1px dotted $dark-gray;;
@@ -94,10 +96,19 @@
 
 .filter-left__inputs {
   display: none;
+  padding-top: 20px;
 }
 
 .filter-left__input-wrapper {
   width: 49%;
+
+  &--more {
+    display: none;
+  }
+}
+
+.filter-left__input-wrapper--more.filter-left__input-wrapper--active {
+  display: block;
 }
 
 .filter-left__group-title--active ~ .filter-left__inputs {
@@ -229,6 +240,18 @@
 }
 
 @media (min-width: $desktop-width) {
+  .filter-left__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 26px;
+    color: $dark-gray;
+    margin: 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e6ea;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+
   .filter-left__main-toggle {
     display: none;
   }

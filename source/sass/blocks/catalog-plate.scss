@@ -10,4 +10,18 @@
   margin-bottom: 15px;
 }
 
+@media (min-width: $desktop-width) {
+  .catalog-plate__list {
+    @include list-reset;
+    justify-content: flex-start;
+  }
+
+  .catalog-plate__item {
+    margin-right: 10px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
 
