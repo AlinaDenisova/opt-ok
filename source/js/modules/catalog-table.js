@@ -6,20 +6,22 @@ jQuery(document).ready(function($) {
     previousColumnIndex;
 
     $table
-    .on('mouseover','td', function() {
+    .on('mouseover','th', function() {
       var $cell = $(this),
         index = previousColumnIndex = $cell.index();
 
       $table.find('.catalog-table__row').each(function() {
         $(this).children().eq(index).css('background-color', highlightColor);
       })
-      $table.find('.catalog-table__title').each(function() {
+      $table.find('.catalog-table__title-row').each(function() {
         $(this).children().eq(index).css('background-color', highlightColorRed);
+        $(this).children().eq(index).addClass("catalog-table__title--active");
       })
     })
 
-    .on('mouseout','td', function() {
+    .on('mouseout','th', function() {
       $table.find('tr').each(function() {
+        $(this).children().eq(previousColumnIndex).removeClass("catalog-table__title--active");
         $(this).children().eq(previousColumnIndex).css('background-color', '');
       })
     })

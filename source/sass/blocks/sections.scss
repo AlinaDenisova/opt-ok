@@ -40,7 +40,7 @@
 .sections__offers-list {
   @include list-reset;
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   align-items: center;
 }
 
@@ -69,12 +69,18 @@
 }
 
 .sections__item-title {
+  min-height: 40px;
+  padding: 0 5px;
   font-size: 14px;
   line-height: 20px;
   color: #252525;
   text-decoration: underline;
   margin: 0;
   font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .sections__slides {
@@ -84,7 +90,6 @@
 }
 
 .sections__link {
-  min-height: 74px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,8 +97,6 @@
 }
 
 .sections__img-wrapper {
-  min-height: 54px;
-  min-width: 112px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,13 +112,17 @@
 @media (min-width: $desktop-width) {
   .sections {
     flex-direction: row;
-    padding: 5px 12px 10px 17px;
+    padding: 30px 12px 10px 17px;
   }
 
   .sections__text {
     display: flex;
     flex-direction: row;
-    padding-top: 15px;
+    padding-top: 10px;
+  }
+
+  .sections__offers-list {
+    margin-bottom: 10px;
   }
 
   .sections__wrapper {
@@ -124,5 +131,6 @@
 
   .sections__title-wrapper {
     margin-right: 70px;
+    padding-top: 22px;
   }
 }

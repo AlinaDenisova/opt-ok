@@ -41,7 +41,7 @@ gulp.task('jsBuild', function () { // Склеивает и сжимает js м
 
 gulp.task('jsMinBuild', function (cb) { // Сжимает самостоятельные js файлы для билда
   pump([
-        gulp.src('source/js/*.js'),
+        gulp.src('source/js/**/*.js'),
         uglify(),
         gulp.dest('build/js')
     ],
@@ -50,7 +50,7 @@ gulp.task('jsMinBuild', function (cb) { // Сжимает самостоятел
 });
 
 gulp.task('imagesBuild', function() { // Оптимизирует растровую графику (только для билда)
-  return gulp.src('source/img/**/*.{jpg,png,svg}')
+  return gulp.src('source/img/**/*.{jpg,png,svg,gif}')
     .pipe(cache(imagemin([
       imagemin.gifsicle({interlaced: true}),
       imagemin.jpegtran({progressive: true}),
@@ -73,17 +73,6 @@ gulp.task('clearCache', function (done) { // Чистит кэш
   return cache.clearAll(done);
 });
 
-gulp.task('webpDev', function() { // Копирует графику в webP формат для разработки
-  return gulp.src('source/img/**/*.{jpg,png}', {since: gulp.lastRun('webpDev')})
-    .pipe(webp({quality: 70}))
-    .pipe(gulp.dest("dev/img"));
-});
-
-gulp.task('webpBuild', function() { // Копирует графику в webP формат для билда
-  return gulp.src('source/img/**/*.{jpg,png}')
-    .pipe(webp({quality: 70}))
-    .pipe(gulp.dest("build/img"));
-});
 
 gulp.task('styleDev', function () { // Создает из стилей sass style.css, расставляет префиксы (разработка)
   return gulp.src('source/sass/style.scss')
@@ -176,10 +165,10 @@ gulp.task('serve', function () { // Запускает сервер, при из
 
 gulp.task('watch', function () { // Настройки вотчера
   gulp.watch('source/**/*.scss', gulp.series('styleDev'));
-  gulp.watch('source/{fonts,img,js}/**/*.*', gulp.parallel('copyDev', 'jsDev', 'webpDev'));
+  gulp.watch('source/{fonts,img,js}/**/*.*', gulp.parallel('copyDev', 'jsDev'));
   gulp.watch('source/*.html', gulp.series('copyHTMLDev'));
 });
 
-gulp.task('dev', gulp.series(gulp.parallel('styleDev', 'copyDev', 'webpDev', 'jsDev',  gulp.series('spriteDev', 'copyHTMLDev')), gulp.parallel('clearCache', 'watch', 'serve')));
+gulp.task('dev', gulp.series(gulp.parallel('styleDev', 'copyDev', 'jsDev',  gulp.series('spriteDev', 'copyHTMLDev')), gulp.parallel('clearCache', 'watch', 'serve')));
 
-gulp.task('build', gulp.series('cleanBuild', gulp.parallel('styleBuild', 'imagesBuild', 'copyBuild', 'webpBuild', 'jsBuild', 'jsMinBuild', gulp.series('spriteBuild', 'copyHTMLBuild', 'clearCache'))));
+gulp.task('build', gulp.series('cleanBuild', gulp.parallel('styleBuild', 'imagesBuild', 'copyBuild', 'jsBuild', 'jsMinBuild', gulp.series('spriteBuild', 'copyHTMLBuild', 'clearCache'))));
