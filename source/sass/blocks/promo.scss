@@ -4,11 +4,12 @@
 
 .promo__slides {
   @include list-reset;
+  display: flex;
+  box-sizing: border-box;
 }
 
 .promo__slide {
   position: relative;
-  display: none;
   min-height: 334px;
   text-align: center;
   background-color: #cda68c;
@@ -17,6 +18,9 @@
   background-size: cover;
   box-sizing: border-box;
   padding-top: 80px;
+  display: block;
+  padding-right: 10px;
+  padding-left: 10px;
 
   &::before {
     content: '';
@@ -30,12 +34,6 @@
     background-image: url("../img/layer-757-copy.png");
   }
 
-  &--active {
-    display: block;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
   &--1 {
     background-image: url("../img/slide-1.jpg");
   }
@@ -47,6 +45,8 @@
   width: 57%;
   margin: 0 auto;
   margin-bottom: 10px;
+  position: relative;
+  z-index: 99;
 }
 
 .promo__wrapper {
@@ -93,6 +93,7 @@
 }
 
 .promo__btn {
+  font-size: 0;
   position: absolute;
   top: 40%;
   width: 16px;

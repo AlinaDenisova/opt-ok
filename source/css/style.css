@@ -2330,29 +2330,24 @@ label.visually-hidden:active {
     left: 0; }
 
 .slider__dots {
-  display: none; }
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  display: block;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  min-height: 6px; }
 
-@media (min-width: 1100px) {
-  .slider__dots {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    display: block;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); }
-  .slider__dot {
-    display: inline-block;
-    width: 20px;
-    height: 6px;
-    margin-right: 4px;
-    vertical-align: middle;
-    background-color: #ffffff;
-    cursor: pointer; }
-    .slider__dot--active {
-      background-color: #a70407; } }
+.slider__dot {
+  display: inline-block;
+  width: 20px;
+  height: 6px;
+  margin-right: 4px;
+  vertical-align: middle;
+  background-color: #ffffff;
+  cursor: pointer; }
+  .slider__dot.active {
+    background-color: #a70407; }
 
 .promo {
   margin-bottom: 20px; }
@@ -2360,11 +2355,15 @@ label.visually-hidden:active {
 .promo__slides {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .promo__slide {
   position: relative;
-  display: none;
   min-height: 334px;
   text-align: center;
   background-color: #cda68c;
@@ -2373,7 +2372,10 @@ label.visually-hidden:active {
   background-size: cover;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 80px; }
+  padding-top: 80px;
+  display: block;
+  padding-right: 10px;
+  padding-left: 10px; }
   .promo__slide::before {
     content: '';
     position: absolute;
@@ -2384,10 +2386,6 @@ label.visually-hidden:active {
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url("../img/layer-757-copy.png"); }
-  .promo__slide--active {
-    display: block;
-    padding-right: 10px;
-    padding-left: 10px; }
   .promo__slide--1 {
     background-image: url("../img/slide-1.jpg"); }
 
@@ -2396,7 +2394,9 @@ label.visually-hidden:active {
   padding: 0 15px;
   width: 57%;
   margin: 0 auto;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 99; }
 
 .promo__wrapper {
   font-size: 25px;
@@ -2440,6 +2440,7 @@ label.visually-hidden:active {
   background-color: rgba(0, 0, 0, 0.8); }
 
 .promo__btn {
+  font-size: 0;
   position: absolute;
   top: 40%;
   width: 16px;
@@ -2661,7 +2662,6 @@ label.visually-hidden:active {
 
 .novelties-of-week__slide {
   position: relative;
-  display: none;
   min-height: 150px;
   text-align: center;
   background-repeat: no-repeat;
@@ -2669,12 +2669,11 @@ label.visually-hidden:active {
   background-size: cover;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-  .novelties-of-week__slide--active {
-    display: block; }
 
 .novelties-of-week__btn {
   position: absolute;
-  top: 35%;
+  font-size: 0;
+  top: 20%;
   width: 16px;
   height: 44px;
   padding: 0;
@@ -2694,9 +2693,9 @@ label.visually-hidden:active {
   .novelties-of-week__btn::after {
     top: calc(50% - 22px); }
   .novelties-of-week__btn--next {
-    right: 15px; }
+    right: 5px; }
   .novelties-of-week__btn--prev {
-    left: 15px; }
+    left: 5px; }
   .novelties-of-week__btn--next::before {
     -webkit-transform: skewX(-18deg);
     transform: skewX(-18deg);
@@ -2723,7 +2722,7 @@ label.visually-hidden:active {
   margin-top: 10px; }
 
 @media (min-width: 1100px) {
-  .novelties-of-week__slide--active {
+  .novelties-of-week__slide {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2860,22 +2859,21 @@ input::-webkit-inner-spin-button {
 
 .discount__slide {
   position: relative;
-  display: none;
   min-height: 150px;
   text-align: center;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-  .discount__slide--active {
-    display: block;
-    padding-right: 10px;
-    padding-left: 10px; }
+  box-sizing: border-box;
+  display: block;
+  padding-right: 10px;
+  padding-left: 10px; }
 
 .discount__btn {
+  font-size: 0;
   position: absolute;
-  top: 35%;
+  top: 20%;
   width: 16px;
   height: 44px;
   padding: 0;
@@ -2963,7 +2961,7 @@ input::-webkit-inner-spin-button {
   display: block; }
 
 @media (min-width: 1100px) {
-  .discount__slide--active {
+  .discount__slide {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

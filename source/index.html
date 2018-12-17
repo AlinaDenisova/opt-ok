@@ -117,7 +117,7 @@
               <a class="site-list__link" href="#">Главная</a>
             </li>
             <li class="site-list__item">
-              <a class="site-list__link" href="product-card.html">Каталог</a>
+              <a class="site-list__link" href="catalog-table.html">Каталог</a>
             </li>
             <li class="site-list__item">
               <a class="site-list__link" href="#">Новости</a>
@@ -474,10 +474,10 @@
           </div>
 
           <div class="page-main__wrapper page-main__wrapper--index-content">
-            <section class="slider promo">
-              <ul class="promo__slides">
-                <li class="promo__slide promo__slide--active promo__slide--1">
-                  <a class="promo__link">
+            <section class="promo">
+              <ul class="promo__slides slider owl-carousel">
+                <li class="promo__slide promo__slide--1">
+                  <a class="promo__link" href="#">
                     <div class="promo__wrapper">
                       <h2 class="promo__slide-title">Ножи из Дамасской стали</h2>
                     </div>
@@ -517,20 +517,13 @@
                   </div>
                 </li>
               </ul>
-              <button class="promo__btn promo__btn--prev slider__btn">
-                <span class="visually-hidden">Предыдущий слайд</span>
-              </button>
-              <button class="promo__btn promo__btn--next slider__btn">
-                <span class="visually-hidden">Следующий слайд</span>
-              </button>
-              <ul class="slider__dots"></ul>
             </section>
 
             <section class="slider novelties-of-week">
               <div class="novelties-of-week__wrapper">
                 <h2 class="novelties-of-week__title">Новинки недели</h2>
-                <ul class="novelties-of-week__slides">
-                  <li class="novelties-of-week__slide novelties-of-week__slide--active catalog-card catalog-card--novelties-of-week">
+                <ul class="novelties-of-week__slides slider owl-carousel">
+                  <li class="novelties-of-week__slide catalog-card catalog-card--novelties-of-week">
                     <div class="catalog-card__img">
                       <a class="catalog-card__link" href="#">
                         <img src="img/product-1.jpg" alt="Изображение новинки недели" width="220" height="123">
@@ -585,20 +578,14 @@
                     </div>
                   </li>
                 </ul>
-                <button class="novelties-of-week__btn novelties-of-week__btn--prev slider__btn">
-                  <span class="visually-hidden">Предыдущий слайд</span>
-                </button>
-                <button class="novelties-of-week__btn novelties-of-week__btn--next slider__btn">
-                  <span class="visually-hidden">Следующий слайд</span>
-                </button>
               </div>
               <a class="novelties-of-week__more-info" href="#">Посмотреть все новинки</a>
             </section>
 
-            <section class="slider discount">
+            <section class="discount">
               <div class="discount__wrapper">
                 <h2 class="discount__title">Акции</h2>
-                <ul class="discount__slides">
+                <ul class="discount__slides slider owl-carousel">
                   <li class="discount__slide discount__slide--active discount__item">
                     <div class="discount__img">
                       <a class="discount__link" href="#">
@@ -634,12 +621,6 @@
                     </div>
                   </li>
                 </ul>
-                <button class="discount__btn discount__btn--prev slider__btn">
-                  <span class="visually-hidden">Предыдущий слайд</span>
-                </button>
-                <button class="discount__btn discount__btn--next slider__btn">
-                  <span class="visually-hidden">Следующий слайд</span>
-                </button>
                </div>
               <a class="discount__more-info" href="#">Посмотреть все акции</a>
             </section>
@@ -909,6 +890,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/picturefill.js"></script>
     <script src="js/all.js"></script>
   </body>
