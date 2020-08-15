@@ -1,0 +1,74 @@
+.quantity {
+  position: relative;
+  display: inline-block;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.quantity__field {
+  width: 54px;
+  height: 31px;
+  background-color: white;
+  border: 1px solid #e2e6ea;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 22px;
+  color: $dark-gray;
+  padding: 0 12px;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $red;
+  }
+}
+
+.quantity__arrow {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .quantity__arrow {
+    padding: 0;
+    display: block;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 4px;
+
+    &--minus {
+      top: 19px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 5px;
+    }
+
+    &--minus::after {
+      border: 5px solid transparent;
+      border-top: 5px solid $red;
+    }
+
+    &--plus::after {
+      border: 5px solid transparent;
+      border-bottom: 5px solid $red;
+    }
+  }
+}
+
+

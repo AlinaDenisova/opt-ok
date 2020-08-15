@@ -1,0 +1,35 @@
+.similar-products {
+  margin-bottom: 30px;
+}
+
+.similar-products__title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $dark-gray;
+  margin: 0;
+  margin-bottom: 25px;
+}
+
+.similar-products__list {
+  @include list-reset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.similar-products__item {
+  width: 203px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: $desktop-width) {
+  .similar-products__list {
+    justify-content: space-between;
+  }
+
+  .similar-products__item {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,19 @@
+.btn {
+  box-sizing: border-box;
+  display: flex;
+  border: none;
+  padding: 10px 21px;
+  justify-content: center;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: $red;
+  border-radius: 29.5px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 114px;
+  border-radius: 3px;
+  background-image: linear-gradient(to top, #820b04, #5f070c 50%, #d04a4a 52%, #a00d18 99%);
+}

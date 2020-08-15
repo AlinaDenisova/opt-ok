@@ -1,0 +1,19 @@
+@mixin container {
+  box-sizing: border-box;
+  padding: 0 10px;
+  width: 100%;
+}
+
+@mixin desktop-width {
+  max-width: 1140px;
+  min-width: 1140px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,262 @@
+.filter-left {
+  border: 1px solid #e2e6ea;
+  width: 100%;
+}
+
+.filter-left__wrapper {
+  position: relative;
+}
+
+.filter-left__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  color: $dark-gray;
+  margin: 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e6ea;
+  padding: 0 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.filter-left__main-toggle {
+  border: none;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  z-index: 2;
+  background-color: transparent;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: transparent;
+    border: 2px solid $red;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  &--active::after {
+    top: 5px;
+    right: 10px;
+    border: 2px solid #8d8d8d;
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+.filter-left__form {
+  display: none;
+  padding: 0 10px;
+
+  &--active {
+    display: block;
+  }
+}
+
+.filter-left__group {
+  border-bottom: 1px solid #e2e6ea;
+  padding-top: 10px;
+  padding-bottom: 15px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.filter-left__group-title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0;
+  color: $dark-gray;
+  cursor: pointer;
+
+  & span {
+    border-bottom: 1px dotted $dark-gray;;
+  }
+
+  &--active {
+    color: #737373;
+  }
+
+  &--active span {
+    border-bottom: none;
+  }
+}
+
+.filter-left__inputs {
+  display: none;
+  padding-top: 20px;
+}
+
+.filter-left__input-wrapper {
+  width: 49%;
+
+  &--more {
+    display: none;
+  }
+}
+
+.filter-left__input-wrapper--more.filter-left__input-wrapper--active {
+  display: block;
+}
+
+.filter-left__group-title--active ~ .filter-left__inputs {
+  display: block;
+}
+
+.filter-left__group-title--active ~ .filter-left__inputs--brands {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-left__label {
+  padding-left: 20px;
+  color: $dark-gray;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: auto;
+  margin-bottom: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #e2e6ea;
+    border-radius: 3px;
+    background-color: transparent;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:active::before {
+    border: 1px solid $red;
+  }
+}
+
+.filter-left__link {
+  font-size: 14px;
+  line-height: 16px;
+  color: $red;
+  border-bottom: 1px dotted $red;
+  display: block;
+  padding-top: 5px;
+}
+
+.filter-left__input:checked + .filter-left__label::after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 9px;
+  height: 5px;
+  background-color: transparent;
+  border: 2px solid $red;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(135deg);
+}
+
+.filter-left__length-label {
+  font-size: 14px;
+  line-height: 22px;
+  color: $dark-gray;
+  margin-right: 5px;
+}
+
+.filter-left__range-control {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.filter-left__range {
+  width: 98%;
+  display: flex;
+}
+
+.filter-left__range-input {
+  margin-top: 12px;
+}
+
+.filter-left__length-field {
+  width: 76px;
+  height: 23px;
+  border: 1px solid #e2e6ea;
+  border-radius: 3px;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 0 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: $dark-gray;
+  font-family: inherit;
+  box-sizing: border-box;
+  margin-right: 10px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid $red;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.filter-left__length-value {
+  position: absolute;
+  top: -20px;
+  font-size: 11px;
+  line-height: 22px;
+  color: #8d8d8d;
+
+  &--min {
+    left: 0;
+  }
+
+  &--max {
+    right: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .filter-left__title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 26px;
+    color: $dark-gray;
+    margin: 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e2e6ea;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+
+  .filter-left__main-toggle {
+    display: none;
+  }
+
+  .filter-left__form {
+    display: block;
+  }
+}

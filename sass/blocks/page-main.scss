@@ -1,0 +1,60 @@
+.page-main__container {
+  background-color: #ffffff;
+  width: 93.75%;
+  margin: 0 3.125%;
+  padding-bottom: 105px;
+}
+
+.page-main__wrapper {
+  @include container;
+
+  &--nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-main__container {
+    @include desktop-width;
+    display: flex;
+    padding-bottom: 105px;
+    padding-top: 35px;
+
+    &--column {
+      flex-direction: column;
+      padding-bottom: 85px;
+    }
+
+    &--inner {
+      padding: 0;
+      min-width: 1120px;
+      max-width: 1120px;
+    }
+  }
+
+  .page-main__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-right: 19px;
+
+    &--nav {
+      width: 234px;
+    }
+
+    &--index-content {
+      width: 614px;
+    }
+
+    &--aside {
+      width: 234px;
+      margin-right: 0;
+    }
+
+    &--content {
+      margin-right: 0;
+      width: 77%;
+    }
+  }
+}

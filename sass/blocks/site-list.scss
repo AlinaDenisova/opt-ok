@@ -1,0 +1,121 @@
+.site-list {
+  @include list-reset;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  display: none;
+  background-color: white;
+  box-shadow: 0 4px 4px 0 rgba(1, 1, 1, 0.5);
+  display: none;
+  z-index: 5;
+
+  &--active {
+    display: block;
+  }
+}
+
+.site-list__item {
+  border-bottom: 2px solid $red;
+  color: $red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  background-image: linear-gradient(to bottom, #ffffff, #bebcbc);
+
+  &:last-child {
+    padding: 7px 30px;
+  }
+}
+
+.site-list__link {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 22px;
+  color: inherit;
+}
+
+.site-list__field {
+  background-color: #ffffff;
+  border: 1px solid $red;
+  border-radius: 5px;
+  font-size: 14px;
+  height: 32px;
+  padding: 8px 30px 8px 14px;
+  box-sizing: border-box;
+  margin: 0;
+  width: 228px;
+  outline: none;
+  background-image: url("../img/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: 98% 6px;
+}
+
+@media (min-width: $desktop-width) {
+  .site-list {
+    position: relative;
+    display: flex;
+    width: 100%;
+    box-shadow: none;
+    background-color: #a70407;
+    background-image: linear-gradient(to top, #820b04 0%, #5f070c 50%, #d04a4a 52%, #a00d18 99%, #a00d18 100%);
+    border-radius: 5px;
+  }
+
+  .site-list__item {
+    border-bottom: none;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 0;
+    background-color: transparent;
+    background-image: none;
+
+    &--active {
+      background-image: linear-gradient(to top, #bf1003, #870b09 50%, #fd494e 52%, #db111e 80%, #ca110e 99%);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-image: linear-gradient(to top, rgba(191, 16, 3, 0.3), rgba(135, 11, 9, 0.7) 50%, rgba(253, 73, 78, 0.7) 52%, rgba(219, 17, 30, 0.7) 80%, rgba(202, 17, 14, 0.7) 99%);
+    }
+
+
+    &:last-child {
+      padding: 5px 0;
+    }
+
+    &:first-child .site-list__link {
+      border-left: 0;
+      padding: 0 15px 0 30px;
+    }
+
+    &:nth-last-child(2) .site-list__link {
+      border-right: none;
+    }
+
+    &:last-child .site-list__link {
+      border: none;
+      padding: 0 10px 0 20px;
+      color: #ffffff;
+    }
+  }
+
+  .site-list__link {
+    font-size: 15px;
+    line-height: 17px;
+    text-transform: uppercase;
+    border-right: 1px solid #e86364;
+    border-left: 1px solid #480408;
+    padding: 0 15px;
+  }
+
+  .site-list__field {
+    width: 115%;
+  }
+}

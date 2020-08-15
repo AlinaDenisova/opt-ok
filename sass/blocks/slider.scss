@@ -1,0 +1,103 @@
+.slider {
+  position: relative;
+}
+
+.owl-carousel .slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider__item {
+  touch-action: none;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 44px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 0;
+  z-index: 2;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: #cccccc;
+    width: 5px;
+    height: 22px;
+  }
+
+  &:hover::before,
+  &:focus::before,
+  &:active::before,
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    background-color: $red;
+  }
+
+  &::before {
+    top: 50%;
+  }
+
+  &::after {
+    top: calc(50% - 22px);
+  }
+
+  &--next {
+    right: 5px;
+  }
+
+  &--prev {
+    left: 5px;
+  }
+
+  &--next::before {
+    transform: skewX(-18deg);
+    right: 0;
+  }
+
+  &--next::after {
+    transform: skewX(18deg);
+    right: 0;
+  }
+
+  &--prev::before {
+    transform: skewX(-342deg);
+    left: 0;
+  }
+
+  &--prev::after {
+    transform: skewX(342deg);
+    left: 0;
+  }
+}
+
+.slider__dots {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  display: block;
+  transform: translateX(-50%);
+  min-height: 6px;
+}
+
+.slider__dot {
+  display: inline-block;
+  width: 20px;
+  height: 6px;
+  margin-right: 4px;
+  vertical-align: middle;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  &.active {
+    background-color: $red;
+  }
+}
